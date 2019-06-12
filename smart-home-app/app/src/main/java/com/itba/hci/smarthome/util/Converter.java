@@ -5,7 +5,6 @@ import android.arch.persistence.room.TypeConverter;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.itba.hci.smarthome.model.entities.Usuario;
 
 import java.lang.reflect.Type;
 import java.util.Collections;
@@ -59,15 +58,15 @@ public class Converter {
 //        return gson.toJson(someObjects);
 //    }
 //
-    @TypeConverter
-    public static Usuario stringToUsuario(String data) {
-        if (data != null){
-            Type listType = new TypeToken<Usuario>() {}.getType();
-            return gson.fromJson(data, listType);
-        }
-        return null;
-
-    }
+//    @TypeConverter
+//    public static Usuario stringToUsuario(String data) {
+//        if (data != null){
+//            Type listType = new TypeToken<Usuario>() {}.getType();
+//            return gson.fromJson(data, listType);
+//        }
+//        return null;
+//
+//    }
 //
 //    @TypeConverter
 //    public static String usuarioToString(Usuario usuario) {

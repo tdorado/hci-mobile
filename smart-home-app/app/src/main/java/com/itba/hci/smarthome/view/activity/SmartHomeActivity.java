@@ -48,7 +48,7 @@ public abstract class SmartHomeActivity extends DaggerAppCompatActivity {
         return this;
     }
 
-    protected abstract void injectDependencies(SmartHomeComponents ingeComponents);
+    protected abstract void injectDependencies(SmartHomeComponents smartHomeComponents);
 
     public void showToastError(String error) {
         if (getApplicationContext() != null) {

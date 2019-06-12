@@ -24,7 +24,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    public SmartHomeApplication providIngeApplication() {
+    public SmartHomeApplication provideSmartHomeApplication() {
         return this.smartHomeApplication;
     }
 

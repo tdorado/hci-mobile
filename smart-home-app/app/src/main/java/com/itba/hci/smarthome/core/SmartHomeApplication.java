@@ -10,7 +10,7 @@ import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
 import com.itba.hci.smarthome.dagger.modules.ApplicationModule;
 import com.itba.hci.smarthome.dagger.modules.DataModule;
 import com.itba.hci.smarthome.dagger.modules.ServiceModule;
-import com.itba.hci.smarthome.view.activity.LoginActivity;
+import com.itba.hci.smarthome.view.activity.DevicesActivity;
 
 import javax.inject.Inject;
 
@@ -71,7 +71,7 @@ public class SmartHomeApplication extends MultiDexApplication implements HasActi
 
     public Intent getIntentShortcut(){
         return new Intent()
-                .setClass(getApplicationContext(), LoginActivity.class)
+                .setClass(getApplicationContext(), DevicesActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 .setAction(Intent.ACTION_MAIN)
                 .addCategory(Intent.CATEGORY_LAUNCHER);

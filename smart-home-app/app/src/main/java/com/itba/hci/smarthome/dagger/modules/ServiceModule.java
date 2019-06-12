@@ -1,7 +1,7 @@
 package com.itba.hci.smarthome.dagger.modules;
 
 import com.google.gson.Gson;
-import com.itba.hci.smarthome.service.LoginService;
+import com.itba.hci.smarthome.service.DeviceService;
 
 import javax.inject.Singleton;
 
@@ -18,7 +18,7 @@ public class ServiceModule {
     public Retrofit provideRetrofit(Gson gson) {
         OkHttpClient client = new OkHttpClient.Builder().build();
         return new Retrofit.Builder()
-                .baseUrl("http://localhost:8080")
+                .baseUrl("http://localhost:8080/api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
@@ -35,9 +35,11 @@ public class ServiceModule {
 
     @Provides
     @Singleton
-    public LoginService providesLoginService(Retrofit retrofit) {
-        return retrofit.create(LoginService.class);
+    public DeviceService providesDeviceService(Retrofit retrofit){
+        return retrofit.create(DeviceService.class);
     }
+
+
 
 
 }

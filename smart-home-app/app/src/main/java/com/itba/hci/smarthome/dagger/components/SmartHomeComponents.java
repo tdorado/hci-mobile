@@ -6,9 +6,9 @@ import com.itba.hci.smarthome.dagger.modules.ApplicationModule;
 import com.itba.hci.smarthome.dagger.modules.DataModule;
 import com.itba.hci.smarthome.dagger.modules.FragmentModule;
 import com.itba.hci.smarthome.dagger.modules.ServiceModule;
-import com.itba.hci.smarthome.model.viewModel.LoginViewModel;
-import com.itba.hci.smarthome.view.activity.LoginActivity;
-import com.itba.hci.smarthome.view.fragment.LoginFragment;
+import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
+import com.itba.hci.smarthome.view.activity.DevicesActivity;
+import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 
 import javax.inject.Singleton;
 
@@ -32,11 +32,11 @@ import dagger.android.AndroidInjectionModule;
 public interface SmartHomeComponents {
     void inject(SmartHomeApplication smartHomeApplication);
 
-    void inject(LoginFragment loginFragment);
+    void inject(DevicesActivity devicesActivity);
 
-    void inject(LoginActivity loginActivity);
+    void inject(DevicesFragment devicesFragment);
 
-    void inject(LoginViewModel loginViewModel);
+    void inject(DeviceViewModel deviceViewModel);
 
     final class Initializer {
         public static SmartHomeComponents init(ApplicationModule applicationModule,

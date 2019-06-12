@@ -8,8 +8,7 @@ import com.itba.hci.smarthome.view.Navigator;
 
 import javax.inject.Inject;
 
-public class LoginActivity extends SmartHomeActivity {
-
+public class DevicesActivity extends SmartHomeActivity {
     @Inject
     Navigator navigator;
 
@@ -17,12 +16,12 @@ public class LoginActivity extends SmartHomeActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_blank);
         super.onCreate(savedInstanceState);
-        navigator.showLoginFragment(this);
+        navigator.showDevicesFragment(this);
     }
 
     @Override
-    protected void injectDependencies(SmartHomeComponents ingeComponents) {
-        ingeComponents.inject(this);
+    protected void injectDependencies(SmartHomeComponents smartHomeComponents) {
+        smartHomeComponents.inject(this);
     }
 
     public void onBackPressed() {

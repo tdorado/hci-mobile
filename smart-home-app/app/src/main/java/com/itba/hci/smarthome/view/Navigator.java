@@ -5,9 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.itba.hci.smarthome.R;
-import com.itba.hci.smarthome.view.activity.LoginActivity;
+import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.SmartHomeActivity;
-import com.itba.hci.smarthome.view.fragment.LoginFragment;
+import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 
 /**
  * this class is use to navigate between activities and fragments
@@ -26,7 +26,22 @@ public class Navigator {
      * from.startActivity(intent);
      */
 
+    public void showDevicesActivity(DevicesFragment routinesFragment){
+        Intent intent = new Intent(routinesFragment.getContext(), DevicesActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        routinesFragment.startActivity(intent);
+    }
 
+//    public void showSignUpActivity(LoginFragment from) {
+//        Intent intent = new Intent(from.getContext(), SignUpActivity.class);
+//        from.startActivity(intent);
+//    }
+//
+//    public void showHomeRestaurantActivity(LoginFragment loginFragment) {
+//        Intent intent = new Intent(loginFragment.getContext(), HomeRestaurantActivity.class);
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        loginFragment.startActivity(intent);
+//    }
 //    public void showHomeClienteActivity(LoginFragment loginFragment) {
 //        Intent intent = new Intent(loginFragment.getContext(), HomeClienteActivity.class);
 //        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -47,20 +62,14 @@ public class Navigator {
      * openFragment(ActivityFrom, fragment, fragment name, addToBackStack?
      */
 
-//    public void showSignUpActivity(LoginFragment from) {
-//        Intent intent = new Intent(from.getContext(), SignUpActivity.class);
-//        from.startActivity(intent);
-//    }
-//
-//    public void showHomeRestaurantActivity(LoginFragment loginFragment) {
-//        Intent intent = new Intent(loginFragment.getContext(), HomeRestaurantActivity.class);
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        loginFragment.startActivity(intent);
-//    }
-//
-    public void showLoginFragment(LoginActivity loginActivity) {
-        openFragment(loginActivity, new LoginFragment(), "Eat Trip", false);
+    public void showDevicesFragment(DevicesActivity devicesActivity){
+        openFragment(devicesActivity, new DevicesFragment(), "Dispositivos", false);
     }
+
+//
+//    public void showLoginFragment(LoginActivity loginActivity) {
+//        openFragment(loginActivity, new LoginFragment(), "Eat Trip", false);
+//    }
 //
 //    public void showSignUpFragment(SignUpActivity signUpActivity) {
 //        openFragment(signUpActivity, new SignUpFragment(), "Eat Trip", false);

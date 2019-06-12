@@ -7,9 +7,11 @@ import android.content.Context;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.itba.hci.smarthome.core.SmartHomeApplication;
-import com.itba.hci.smarthome.db.LoginRepository;
+import com.itba.hci.smarthome.db.DeviceRepository;
+import com.itba.hci.smarthome.db.RoutineRepository;
 import com.itba.hci.smarthome.db.SmartHomeDb;
-import com.itba.hci.smarthome.service.LoginService;
+import com.itba.hci.smarthome.service.DeviceService;
+import com.itba.hci.smarthome.service.RoutineService;
 
 import javax.inject.Singleton;
 
@@ -21,7 +23,7 @@ public class DataModule {
     private SmartHomeDb smartHomeDb;
 
     public DataModule(SmartHomeApplication mApplication) {
-        smartHomeDb = Room.databaseBuilder(mApplication, SmartHomeDb.class, "smartHome-db").fallbackToDestructiveMigration().build();
+        //smartHomeDb = Room.databaseBuilder(mApplication, SmartHomeDb.class, "smartHome-db").fallbackToDestructiveMigration().build();
     }
 
     @Singleton
@@ -36,12 +38,18 @@ public class DataModule {
             return boostDb.missionDao();
         }
     */
+
     @Singleton
     @Provides
-    public LoginRepository providesLoginRepository(LoginService loginService, Context context) {
-        return new LoginRepository(loginService, context);
+    public DeviceRepository providesDeviceRepository(DeviceService deviceService) {
+        return new DeviceRepository(deviceService);
     }
 
+    @Singleton
+    @Provides
+    public RoutineRepository providesRoutineRepository(RoutineService routineService) {
+        return new RoutineRepository(routineService);
+    }
 
 
     @Provides
