@@ -1,5 +1,7 @@
 package com.itba.hci.smarthome.service.payload;
 
+import java.util.Objects;
+
 public class DeviceResponse {
     private String id;
     private String name;
@@ -61,5 +63,18 @@ public class DeviceResponse {
 
     public void setFailed(Boolean failed) {
         this.failed = failed;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DeviceResponse that = (DeviceResponse) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
