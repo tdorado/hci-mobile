@@ -2,8 +2,6 @@ package com.itba.hci.smarthome.view.fragment;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,9 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.itba.hci.smarthome.R;
+import com.itba.hci.smarthome.model.entities.Device;
 import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
-import com.itba.hci.smarthome.service.payload.DeviceResponse;
 import com.itba.hci.smarthome.util.DevicesAdapter;
 import com.itba.hci.smarthome.view.Navigator;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
@@ -58,9 +56,9 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
     public void onResume() {
         super.onResume();
         deviceViewModel.getAllDevices().
-                    observe(this, new Observer<List<DeviceResponse>>() {
+                    observe(this, new Observer<List<Device>>() {
                         @Override
-                        public void onChanged(@Nullable List<DeviceResponse> devices) {
+                        public void onChanged(@Nullable List<Device> devices) {
                             devicesAdapter.setList(devices);
                             devicesAdapter.notifyDataSetChanged();
                         }

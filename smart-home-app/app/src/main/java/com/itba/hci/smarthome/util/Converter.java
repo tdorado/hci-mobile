@@ -5,6 +5,7 @@ import android.arch.persistence.room.TypeConverter;
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.itba.hci.smarthome.model.entities.Device;
 
 import java.lang.reflect.Type;
 import java.util.Collections;
@@ -28,6 +29,20 @@ public class Converter {
     @TypeConverter
     public static Long fromDate(Date value) {
         return value == null ? null : value.getTime();
+    }
+
+    @TypeConverter
+    public static List<Device> stringToDeviceList(String data){
+        if(data == null){
+            return Collections.emptyList();
+        }
+        Type listType = new TypeToken<List<Device>>() {}.getType();
+        return gson.fromJson(data, listType);
+    }
+
+    @TypeConverter
+    public static String deviceListToString(List<Device> someObjects){
+        return gson.toJson(someObjects);
     }
 //
 //    @TypeConverter

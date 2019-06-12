@@ -4,7 +4,7 @@ import android.arch.lifecycle.LiveData;
 
 import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
 import com.itba.hci.smarthome.db.DeviceRepository;
-import com.itba.hci.smarthome.service.payload.DeviceResponse;
+import com.itba.hci.smarthome.model.entities.Device;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class DeviceViewModel extends SmartHomeViewModel {
         component.inject(this);
     }
 
-    public LiveData<List<DeviceResponse>> getAllDevices(){
+    public LiveData<List<Device>> getAllDevices(){
         return deviceRepository.getAllDevices();
     }
 

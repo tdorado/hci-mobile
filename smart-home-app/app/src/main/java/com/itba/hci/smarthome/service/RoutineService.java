@@ -12,9 +12,9 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface RoutineService {
-    @GET("/routines")
+    @GET("routines")
     Call<List<RoutineResponse>> getAllRoutines();
 
-    @PUT("/routines/{routineId}/execute")
+    @PUT("routines/{routineId}/execute")
     Call<Boolean> executeRoutine(@Path("routineId") String routineId, @Body EmptyRequest emptyRequest);
 }

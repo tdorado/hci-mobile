@@ -12,6 +12,8 @@ public class DevicesActivity extends SmartHomeActivity {
     @Inject
     Navigator navigator;
 
+    private boolean close = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_blank);
@@ -25,6 +27,11 @@ public class DevicesActivity extends SmartHomeActivity {
     }
 
     public void onBackPressed() {
-        finish();
+        if (!close) {
+            showToastError("Presione nuevamente para salir de la aplicación");
+            close = true;
+        } else {
+            finishAffinity();
+        }
     }
 }

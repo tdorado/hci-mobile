@@ -11,7 +11,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.itba.hci.smarthome.R;
-import com.itba.hci.smarthome.service.payload.DeviceResponse;
+import com.itba.hci.smarthome.model.entities.Device;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
 
 import java.util.List;
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHolder> {
-    private List<DeviceResponse> devices;
+    private List<Device> devices;
     private ClickListener clickListener;
     private Context context;
 
@@ -29,7 +29,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
         this.clickListener = clickListener;
     }
 
-    public void setList(List<DeviceResponse> devices) {
+    public void setList(List<Device> devices) {
         this.devices = devices;
     }
 
@@ -45,7 +45,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull DevicesAdapter.ViewHolder viewHolder, int i) {
         //aca se bindea toda la data piola vago, el i es la position dentro de la lista de productos
-        DeviceResponse deviceResponse = devices.get(i);
+        Device deviceResponse = devices.get(i);
 
         viewHolder.deviceResponse = deviceResponse;
         viewHolder.name.setText(deviceResponse.getName());
@@ -59,7 +59,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public DeviceResponse deviceResponse;
+        public Device deviceResponse;
 
         @BindView(R.id.device_name)
         TextView name;

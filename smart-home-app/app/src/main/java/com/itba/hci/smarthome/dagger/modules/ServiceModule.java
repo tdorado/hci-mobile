@@ -18,7 +18,7 @@ public class ServiceModule {
     public Retrofit provideRetrofit(Gson gson) {
         OkHttpClient client = new OkHttpClient.Builder().build();
         return new Retrofit.Builder()
-                .baseUrl("http://localhost:8080/api/")
+                .baseUrl("http://10.0.2.2:8080/api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
