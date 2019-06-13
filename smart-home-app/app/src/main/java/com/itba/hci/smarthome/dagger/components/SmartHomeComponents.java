@@ -8,10 +8,13 @@ import com.itba.hci.smarthome.dagger.modules.FragmentModule;
 import com.itba.hci.smarthome.dagger.modules.ServiceModule;
 import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.NewDeviceViewModel;
+import com.itba.hci.smarthome.model.viewModel.RoutinesViewModel;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
+import com.itba.hci.smarthome.view.activity.RoutinesActivity;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 import com.itba.hci.smarthome.view.fragment.NewDeviceFragment;
+import com.itba.hci.smarthome.view.fragment.RoutinesFragment;
 
 import javax.inject.Singleton;
 
@@ -46,6 +49,13 @@ public interface SmartHomeComponents {
     void inject(NewDeviceFragment newDeviceFragment);
 
     void inject(NewDeviceViewModel newDeviceViewModel);
+
+    void inject(RoutinesActivity routinesActivity);
+
+    void inject(RoutinesFragment routinesFragment);
+
+    void inject(RoutinesViewModel routinesViewModel);
+
 
 
     final class Initializer {

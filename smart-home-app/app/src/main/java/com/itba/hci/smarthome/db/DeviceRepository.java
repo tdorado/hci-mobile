@@ -55,7 +55,6 @@ public class DeviceRepository {
         return devicesLiveData;
     }
 
-    //REMOVER OBSERVER CADA VEZ QUE AGREGO DISPOSITIVO(BUSCAR PORQUE ES JODIDO)
     public LiveData<Boolean> createDevice(final DeviceRequest deviceRequest){
         deviceIsCreated = new MutableLiveData<>();
 

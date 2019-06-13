@@ -2,6 +2,7 @@ package com.itba.hci.smarthome.dagger.modules;
 
 import com.google.gson.Gson;
 import com.itba.hci.smarthome.service.DeviceService;
+import com.itba.hci.smarthome.service.RoutineService;
 
 import javax.inject.Singleton;
 
@@ -39,7 +40,11 @@ public class ServiceModule {
         return retrofit.create(DeviceService.class);
     }
 
-
+    @Provides
+    @Singleton
+    public RoutineService providesRoutineService(Retrofit retrofit){
+        return retrofit.create(RoutineService.class);
+    }
 
 
 }

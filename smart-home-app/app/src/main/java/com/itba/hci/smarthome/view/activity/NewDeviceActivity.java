@@ -28,6 +28,8 @@ public class NewDeviceActivity extends SmartHomeActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        navigator.showDevicesActivity(this);
+        if(!this.getMenuDrawer().isDrawerOpen()) {
+            navigator.showDevicesActivity(this);
+        }
     }
 }

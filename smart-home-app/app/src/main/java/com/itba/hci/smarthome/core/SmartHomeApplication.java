@@ -49,7 +49,7 @@ public class SmartHomeApplication extends MultiDexApplication implements HasActi
             component.inject(this);
         }
 
-        this.createShotcut();
+        //this.createShotcut();
     }
 
     @Override

@@ -19,4 +19,7 @@ public interface DeviceService {
 
     @GET("devices")
     Call<DevicesResponse> getAllDevices();
+
+    @GET("devices/devicetypes/{deviceTypeId}")
+    Call<DevicesResponse> getDevicesOfTypeId(@Path("deviceTypeId") String deviceTypeId);
 }

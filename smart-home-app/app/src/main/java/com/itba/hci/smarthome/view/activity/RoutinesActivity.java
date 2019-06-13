@@ -11,7 +11,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import javax.inject.Inject;
 
-public class DevicesActivity extends SmartHomeActivity {
+public class RoutinesActivity extends SmartHomeActivity {
     @Inject
     Navigator navigator;
 
@@ -21,8 +21,8 @@ public class DevicesActivity extends SmartHomeActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_blank);
         super.onCreate(savedInstanceState);
-        navigator.showDevicesFragment(this);
-        buildMenuDrawerWithSelectedIdentifier(1);
+        navigator.showRoutinesFragment(this);
+        buildMenuDrawerWithSelectedIdentifier(2);
         getMenuDrawer().setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {

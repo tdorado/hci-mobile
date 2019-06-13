@@ -25,6 +25,11 @@
         <item>Temporizador</item>
     </string-array>
 
+    <string-array name="drawer_items_array">
+        <item>Dispositivos</item>
+        <item>Rutinas</item>
+    </string-array>
+
 
 </resources>
 

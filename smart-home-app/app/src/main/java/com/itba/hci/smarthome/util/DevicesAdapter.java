@@ -37,7 +37,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
     @Override
     public DevicesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         context = viewGroup.getContext();
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.row_device, viewGroup, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.row_device, viewGroup, false);
 
         return new DevicesAdapter.ViewHolder(v, clickListener);
     }

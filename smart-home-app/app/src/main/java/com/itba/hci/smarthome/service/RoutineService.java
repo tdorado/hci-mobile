@@ -1,7 +1,7 @@
 package com.itba.hci.smarthome.service;
 
 import com.itba.hci.smarthome.model.request.EmptyRequest;
-import com.itba.hci.smarthome.service.payload.RoutineResponse;
+import com.itba.hci.smarthome.service.payload.ExecuteRoutineResponse;
 import com.itba.hci.smarthome.service.payload.RoutinesResponse;
 
 import retrofit2.Call;
@@ -15,5 +15,5 @@ public interface RoutineService {
     Call<RoutinesResponse> getAllRoutines();
 
     @PUT("routines/{routineId}/execute")
-    Call<Boolean> executeRoutine(@Path("routineId") String routineId, @Body EmptyRequest emptyRequest);
+    Call<ExecuteRoutineResponse> executeRoutine(@Path("routineId") String routineId, @Body EmptyRequest emptyRequest);
 }

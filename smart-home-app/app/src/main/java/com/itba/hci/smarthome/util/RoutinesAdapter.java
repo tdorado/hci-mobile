@@ -1,8 +1,11 @@
 package com.itba.hci.smarthome.util;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,7 +19,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RoutinesAdapter {
+public class RoutinesAdapter extends RecyclerView.Adapter<RoutinesAdapter.ViewHolder>{
+    private Context context;
     private List<Routine> routines;
     private ClickListener clickListener;
 
@@ -26,6 +30,29 @@ public class RoutinesAdapter {
 
     public void setList(List<Routine> routines){
         this.routines = routines;
+    }
+
+    @NonNull
+    @Override
+    public RoutinesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        context = viewGroup.getContext();
+        View v = LayoutInflater.from(context).inflate(R.layout.row_routine, viewGroup, false);
+
+        return new RoutinesAdapter.ViewHolder(v, clickListener);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RoutinesAdapter.ViewHolder viewHolder, int i) {
+        //aca se bindea toda la data piola vago, el i es la position dentro de la lista de productos
+        Routine routine = routines.get(i);
+
+        viewHolder.routine = routine;
+        viewHolder.name.setText(routine.getName());
+    }
+
+    @Override
+    public int getItemCount() {
+        return routines == null ? 0 : routines.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -44,7 +71,7 @@ public class RoutinesAdapter {
         }
 
         @OnClick(R.id.routine_button)
-        public void onDeviceClick() {
+        public void onRoutineClick() {
             clickListener.onClick(routine.getId());
         }
 
