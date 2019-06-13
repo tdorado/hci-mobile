@@ -27,8 +27,9 @@
         android:layout_marginTop="13dp"
         android:layout_toEndOf="@+id/device_icon"
         android:fontFamily="@font/roboto_bold"
-        android:text="Dispositivo"
-        android:textSize="17sp" />
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:text="Dispositivo"/>
 
     <Switch
         android:id="@+id/device_status"

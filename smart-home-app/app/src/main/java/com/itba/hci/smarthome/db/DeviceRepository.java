@@ -40,11 +40,14 @@ public class DeviceRepository {
                         if(response.body() != null) {
                             devicesLiveData.postValue(response.body().getDevices());
                         }
+                        else{
+                            devicesLiveData.postValue(new ArrayList<Device>());
+                        }
                     }
 
                     @Override
                     public void onFailure(Call<DevicesResponse> call, Throwable t) {
-                        Log.e("SMART-HOME", "exception: " + t.getMessage());
+                        devicesLiveData.postValue(new ArrayList<Device>());
                     }
                 });
             }
@@ -52,35 +55,37 @@ public class DeviceRepository {
         return devicesLiveData;
     }
 
-//    //REMOVER OBSERVER CADA VEZ QUE AGREGO DISPOSITIVO(BUSCAR PORQUE ES JODIDO)
-//    public LiveData<Boolean> createDevice(final DeviceRequest deviceRequest){
-//        deviceIsCreated = new MutableLiveData<>();
-//
-//        Executors.newSingleThreadExecutor().execute(new Runnable() {
-//            @Override
-//            public void run() {
-//                deviceService.createDevice(deviceRequest).enqueue(new Callback<DeviceResponse>() {
-//                    @Override
-//                    public void onResponse(Call<DeviceResponse> call, Response<DeviceResponse> response) {
-//                        if(response.body() != null){
-//                            deviceIsCreated.postValue(true);
-//                            //latestDevices.add(response.body());
-//                            devicesLiveData.postValue(new ArrayList<>(latestDevices));
-//                        }
-//                        else{
-//                            deviceIsCreated.postValue(false);
-//                        }
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<DeviceResponse> call, Throwable t) {
-//                        deviceIsCreated.postValue(false);
-//                    }
-//                });
-//
-//            }
-//        });
-//
-//        return deviceIsCreated;
-//    }
+    //REMOVER OBSERVER CADA VEZ QUE AGREGO DISPOSITIVO(BUSCAR PORQUE ES JODIDO)
+    public LiveData<Boolean> createDevice(final DeviceRequest deviceRequest){
+        deviceIsCreated = new MutableLiveData<>();
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                deviceService.createDevice(deviceRequest).enqueue(new Callback<DeviceResponse>() {
+                    @Override
+                    public void onResponse(Call<DeviceResponse> call, Response<DeviceResponse> response) {
+                        if(response.body() != null){
+                            deviceIsCreated.postValue(true);
+                        }
+                        else{
+                            deviceIsCreated.postValue(false);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<DeviceResponse> call, Throwable t) {
+                        deviceIsCreated.postValue(false);
+                    }
+                });
+
+            }
+        });
+
+        return deviceIsCreated;
+    }
+
+    public LiveData<Boolean> getDeviceIsCreatedLiveData() {
+        return deviceIsCreated;
+    }
 }

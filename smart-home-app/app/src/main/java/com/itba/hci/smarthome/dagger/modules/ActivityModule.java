@@ -1,6 +1,7 @@
 package com.itba.hci.smarthome.dagger.modules;
 
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
+import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -14,5 +15,8 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector(modules = FragmentModule.class)
     abstract DevicesActivity contributeDevicesActivity();
+
+    @ContributesAndroidInjector(modules = FragmentModule.class)
+    abstract NewDeviceActivity contributeNewDeviceActivity();
 
 }

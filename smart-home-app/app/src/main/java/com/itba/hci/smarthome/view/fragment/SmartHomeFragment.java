@@ -28,7 +28,7 @@ public abstract class SmartHomeFragment extends Fragment implements View {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        iniciarViewModels(getViewModels());
+        initializeViewModels(getViewModels());
     }
 
     @Override
@@ -44,7 +44,7 @@ public abstract class SmartHomeFragment extends Fragment implements View {
         return view;
     }
 
-    protected void iniciarViewModels(List<SmartHomeViewModel> viewModels) {
+    protected void initializeViewModels(List<SmartHomeViewModel> viewModels) {
         if (viewModels == null || viewModels.size() == 0)
             return;
         for (SmartHomeViewModel p : viewModels) {

@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Smart Home</string>
+    <string name="add_device">Agregar Dispositivo</string>
+    <string name="status_device">Modificar Dispositivo</string>
+    <string name="devices">Dispositivos</string>
+    <string name="routines">Rutinas</string>
+    <string name="error_message">Algo ha salido mal:</string>
+
+    <string name="device_name">Nombre del Dispositivo:</string>
+    <string name="name">NOMBRE</string>
+    <string name="device_type">Tipo de Dispositivo:</string>
+    <string name="choose_device_type">Elija el Dispositivo</string>
+
+
+
+    <string-array name="device_types_array">
+        <item>Lámpara</item>
+        <item>Aire Acondicionado</item>
+        <item>Persiana/Cortina</item>
+        <item>Alarma</item>
+        <item>Puerta</item>
+        <item>Horno</item>
+        <item>Heladera</item>
+        <item>Temporizador</item>
+    </string-array>
+
+
 </resources>
+

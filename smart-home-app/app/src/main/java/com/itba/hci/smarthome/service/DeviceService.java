@@ -4,8 +4,6 @@ import com.itba.hci.smarthome.model.request.DeviceRequest;
 import com.itba.hci.smarthome.service.payload.DeviceResponse;
 import com.itba.hci.smarthome.service.payload.DevicesResponse;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;

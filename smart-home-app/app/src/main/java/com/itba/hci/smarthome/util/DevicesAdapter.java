@@ -45,10 +45,10 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull DevicesAdapter.ViewHolder viewHolder, int i) {
         //aca se bindea toda la data piola vago, el i es la position dentro de la lista de productos
-        Device deviceResponse = devices.get(i);
+        Device device = devices.get(i);
 
-        viewHolder.deviceResponse = deviceResponse;
-        viewHolder.name.setText(deviceResponse.getName());
+        viewHolder.device = device;
+        viewHolder.name.setText(device.getName());
         viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_kitchen_black_36dp));
         //Me falta ver como conseguir status
     }
@@ -59,7 +59,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public Device deviceResponse;
+        public Device device;
 
         @BindView(R.id.device_name)
         TextView name;
@@ -79,7 +79,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
 
         @OnClick(R.id.content_device)
         public void onDeviceClick() {
-            clickListener.onClick(deviceResponse.getId());
+            clickListener.onClick(device.getId());
         }
 
         public ViewHolder(@NonNull View itemView, ClickListener clickListener) {

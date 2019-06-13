@@ -23,6 +23,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class DevicesFragment extends SmartHomeFragment implements ClickListener {
 
@@ -35,6 +36,11 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
     Navigator navigator;
 
     DeviceViewModel deviceViewModel;
+
+    @OnClick(R.id.button_add_device)
+    public void onAddDeviceClick(){
+        navigator.showNewDeviceActivity(this);
+    }
 
 
     @Override

@@ -1,54 +1,23 @@
 package com.itba.hci.smarthome.service.payload;
 
+import com.itba.hci.smarthome.model.entities.Routine;
+
 public class RoutineResponse {
-    private String id;
-    private String name;
-    private String meta;
-    private Boolean failed = false;
+    private Routine routine;
 
     public RoutineResponse(){
 
     }
 
-    public RoutineResponse(Boolean failed) {
-        this.failed = failed;
+    public RoutineResponse(Routine routine) {
+        this.routine = routine;
     }
 
-    public RoutineResponse(String id, String name, String meta) {
-        this.id = id;
-        this.name = name;
-        this.meta = meta;
+    public Routine getRoutine() {
+        return routine;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getMeta() {
-        return meta;
-    }
-
-    public void setMeta(String meta) {
-        this.meta = meta;
-    }
-
-    public Boolean getFailed() {
-        return failed;
-    }
-
-    public void setFailed(Boolean failed) {
-        this.failed = failed;
+    public void setRoutine(Routine routine) {
+        this.routine = routine;
     }
 }

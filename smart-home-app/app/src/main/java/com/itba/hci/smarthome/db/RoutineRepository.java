@@ -3,8 +3,9 @@ package com.itba.hci.smarthome.db;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
+import com.itba.hci.smarthome.model.entities.Routine;
 import com.itba.hci.smarthome.service.RoutineService;
-import com.itba.hci.smarthome.service.payload.RoutineResponse;
+import com.itba.hci.smarthome.service.payload.RoutinesResponse;
 
 import java.util.Arrays;
 import java.util.List;
@@ -19,30 +20,26 @@ import retrofit2.Response;
 @Singleton
 public class RoutineRepository {
     private RoutineService routineService;
-    MutableLiveData<List<RoutineResponse>> routinesLiveData = new MutableLiveData<>();
+    MutableLiveData<List<Routine>> routinesLiveData = new MutableLiveData<>();
 
     public RoutineRepository(RoutineService routineService) {
         this.routineService = routineService;
     }
 
-    public LiveData<List<RoutineResponse>> getAllRoutines(){
+    public LiveData<List<Routine>> getAllRoutines(){
         Executors.newSingleThreadExecutor().execute(new Runnable() {
             @Override
             public void run() {
-                routineService.getAllRoutines().enqueue(new Callback<List<RoutineResponse>>() {
+                routineService.getAllRoutines().enqueue(new Callback<RoutinesResponse>() {
                     @Override
-                    public void onResponse(Call<List<RoutineResponse>> call, Response<List<RoutineResponse>> response) {
+                    public void onResponse(Call<RoutinesResponse> call, Response<RoutinesResponse> response) {
                         if(response.body() != null){
-                            routinesLiveData.postValue(response.body());
-                        }
-                        else{
-                            routinesLiveData.postValue(Arrays.asList(new RoutineResponse(true)));
+                            routinesLiveData.postValue(response.body().getRoutines());
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<List<RoutineResponse>> call, Throwable t) {
-                        routinesLiveData.postValue(Arrays.asList(new RoutineResponse(true)));
+                    public void onFailure(Call<RoutinesResponse> call, Throwable t) {
                     }
                 });
             }
