@@ -10,6 +10,7 @@ import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
 import com.itba.hci.smarthome.view.activity.SmartHomeActivity;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 import com.itba.hci.smarthome.view.fragment.NewDeviceFragment;
+import com.mikepenz.materialdrawer.DrawerBuilder;
 
 /**
  * this class is use to navigate between activities and fragments
@@ -54,11 +55,11 @@ public class Navigator {
      */
 
     public void showDevicesFragment(DevicesActivity devicesActivity){
-        openFragment(devicesActivity, new DevicesFragment(), "Dispositivos", false);
+        openFragment(devicesActivity, new DevicesFragment(), devicesActivity.getResources().getString(R.string.devices), false);
     }
 
     public void showNewDeviceFragment(NewDeviceActivity newDeviceActivity){
-        openFragment(newDeviceActivity, new NewDeviceFragment(), "Nuevo Dispositivo", false);
+        openFragment(newDeviceActivity, new NewDeviceFragment(), newDeviceActivity.getResources().getString(R.string.add_device), false);
     }
 
 

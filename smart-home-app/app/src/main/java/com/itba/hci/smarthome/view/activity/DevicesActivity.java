@@ -27,11 +27,14 @@ public class DevicesActivity extends SmartHomeActivity {
     }
 
     public void onBackPressed() {
-        if (!close) {
-            showToastError("Presione nuevamente para salir de la aplicación");
-            close = true;
-        } else {
-            finishAffinity();
+        super.onBackPressed();
+        if(!this.getMenuDrawer().isDrawerOpen()) {
+            if (!close) {
+                showToastError("Presione nuevamente para salir de la aplicación");
+                close = true;
+            } else {
+                finishAffinity();
+            }
         }
     }
 }
