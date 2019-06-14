@@ -23,7 +23,7 @@ public class DataModule {
     private SmartHomeDb smartHomeDb;
 
     public DataModule(SmartHomeApplication mApplication) {
-        //smartHomeDb = Room.databaseBuilder(mApplication, SmartHomeDb.class, "smartHome-db").fallbackToDestructiveMigration().build();
+        //smartHomeDb = Room.databaseBuilder(mApplication, SmartHomeDb.class, "smart-home-db").fallbackToDestructiveMigration().build();
     }
 
     @Singleton

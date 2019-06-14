@@ -26,7 +26,7 @@
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/new_device_name"
+                android:id="@+id/edit_device_name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:gravity="center"
@@ -35,29 +35,11 @@
                 android:inputType="text"
                 android:background="@drawable/main_button"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/roboto_light"
-                android:text="@string/device_type"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
-
-            <Spinner
-                android:id="@+id/device_type_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="39dp"
-                android:background="@drawable/main_button"
-                android:entries="@array/device_types_array"
-                android:gravity="center"
-                android:prompt="@string/choose_device_type" />
 
         </LinearLayout>
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/button_accept_new_device"
+            android:id="@+id/button_accept_changes_device"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
@@ -68,7 +50,7 @@
             android:src="@drawable/ic_check" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/button_cancel_new_device"
+            android:id="@+id/button_cancel_changes_device"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start|bottom"

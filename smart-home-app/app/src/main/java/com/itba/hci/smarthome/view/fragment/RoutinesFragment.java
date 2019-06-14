@@ -13,14 +13,11 @@ import com.itba.hci.smarthome.model.entities.Routine;
 import com.itba.hci.smarthome.model.viewModel.RoutinesViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
 import com.itba.hci.smarthome.util.RoutinesAdapter;
-import com.itba.hci.smarthome.view.Navigator;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import javax.inject.Inject;
 
 import butterknife.BindView;
 
@@ -69,7 +66,7 @@ public class RoutinesFragment extends SmartHomeFragment implements ClickListener
     }
 
     @Override
-    public void onClick(String idItemClicked) {
+    public void onClick(int item, String idItemClicked) {
         routinesViewModel.executeRoutine(idItemClicked).observe(this, new Observer<List<Boolean>>() {
             @Override
             public void onChanged(@Nullable List<Boolean> booleans) {
@@ -81,9 +78,9 @@ public class RoutinesFragment extends SmartHomeFragment implements ClickListener
                         }
                     }
                     if (i == 1)
-                        showToastError(i + " acción de rutina ejecutadas");
+                        showToastError(i + " acción de rutina ejecutadas correctamente");
                     else
-                        showToastError(i + " acciones de rutina ejecutadas");
+                        showToastError(i + " acciones de rutina ejecutadas correctamente");
                 }
             }
         });

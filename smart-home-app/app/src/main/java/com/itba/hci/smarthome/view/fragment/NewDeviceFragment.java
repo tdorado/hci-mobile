@@ -60,18 +60,23 @@ public class NewDeviceFragment extends SmartHomeFragment{
 
     @OnClick(R.id.button_accept_new_device)
     public void onNewDeviceAcceptClick(){
-        DeviceRequest deviceRequest = new DeviceRequest(DeviceTypes.getDeviceTypes().get(typesSpinner.getSelectedItemPosition()), newDeviceNameEditText.getText().toString(), "{}");
-        newDeviceViewModel.createDevice(deviceRequest).observe(this, new Observer<Boolean>() {
-            @Override
-            public void onChanged(@Nullable Boolean result) {
-                if(result != null && result){
-                    showToastError("Dispositivo creado correctamente");
+        String newDeviceName = newDeviceNameEditText.getText().toString();
+        if(newDeviceName.isEmpty()) {
+            showToastError("Ingrese un nombre para el dispositivo");
+        }
+        else {
+            DeviceRequest deviceRequest = new DeviceRequest(DeviceTypes.getDeviceTypes().get(typesSpinner.getSelectedItemPosition()), newDeviceName, "{}");
+            newDeviceViewModel.createDevice(deviceRequest).observe(this, new Observer<Boolean>() {
+                @Override
+                public void onChanged(@Nullable Boolean result) {
+                    if (result != null && result) {
+                        showToastError("Dispositivo creado correctamente");
+                    } else {
+                        showToastError("Algo salió mal al intentar crear dispositivo");
+                    }
                 }
-                else{
-                    showToastError("Algo salió mal al intentar crear dispositivo");
-                }
-            }
-        });
-        navigator.showDevicesActivity(this);
+            });
+            navigator.showDevicesActivity(this);
+        }
     }
 }

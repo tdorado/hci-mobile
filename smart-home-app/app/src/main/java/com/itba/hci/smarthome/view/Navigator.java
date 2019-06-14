@@ -6,10 +6,12 @@ import android.support.v4.app.FragmentTransaction;
 
 import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
+import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
 import com.itba.hci.smarthome.view.activity.RoutinesActivity;
 import com.itba.hci.smarthome.view.activity.SmartHomeActivity;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
+import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.NewDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.RoutinesFragment;
 import com.itba.hci.smarthome.view.fragment.SmartHomeFragment;
@@ -58,8 +60,13 @@ public class Navigator {
 
     public void showNewDeviceActivity(SmartHomeFragment from) {
         Intent intent = new Intent(from.getContext(), NewDeviceActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         from.startActivity(intent);
+    }
+
+    public void showEditDeviceActivity(DevicesFragment devicesFragment, String idItemClicked) {
+        Intent intent = new Intent(devicesFragment.getContext(), EditDeviceActivity.class);
+        intent.putExtra("deviceId", idItemClicked);
+        devicesFragment.startActivity(intent);
     }
 
     /**
@@ -81,6 +88,10 @@ public class Navigator {
         openFragment(newDeviceActivity, new NewDeviceFragment(), newDeviceActivity.getResources().getString(R.string.add_device), false);
     }
 
+    public void showEditDeviceFragment(EditDeviceActivity editDeviceActivity, String deviceId) {
+        openFragment(editDeviceActivity, EditDeviceFragment.newInstance(deviceId), editDeviceActivity.getResources().getString(R.string.edit_device), false);
+    }
+
     private Fragment openFragment(SmartHomeActivity from, Fragment fragment, String name, boolean addToBackStack) {
         FragmentTransaction transaction = from.getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.content_frame, fragment, name);
@@ -91,5 +102,7 @@ public class Navigator {
         from.invalidateOptionsMenu();
         return fragment;
     }
+
+
 }
 

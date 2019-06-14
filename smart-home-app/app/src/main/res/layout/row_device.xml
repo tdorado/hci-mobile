@@ -16,20 +16,30 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:src="@drawable/ic_kitchen_black_36dp" />
+        android:src="@drawable/ic_refrigerator" />
 
     <TextView
         android:id="@+id/device_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="13dp"
         android:layout_toEndOf="@+id/device_icon"
         android:fontFamily="@font/roboto_bold"
         android:textColor="@color/black"
         android:textSize="17sp"
-        android:text="Dispositivo"/>
+        android:text="Device"/>
+
+    <ImageButton
+        android:id="@+id/device_edit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="65dp"
+        android:src="@drawable/ic_edit_device"
+        />
 
     <Switch
         android:id="@+id/device_status"
@@ -38,6 +48,6 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="13dp"
-        android:layout_marginEnd="15dp" />
+        android:layout_marginEnd="13dp" />
 
 </RelativeLayout>

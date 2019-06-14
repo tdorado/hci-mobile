@@ -6,12 +6,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
 import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.model.entities.Device;
+import com.itba.hci.smarthome.model.entities.DeviceTypes;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
 
 import java.util.List;
@@ -49,8 +51,40 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
 
         viewHolder.device = device;
         viewHolder.name.setText(device.getName());
-        viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_kitchen_black_36dp));
-        //Me falta ver como conseguir status
+        switch(device.getTypeId()){
+            case "go46xmbqeomjrsjr": //lamp
+                viewHolder.status.setVisibility(View.VISIBLE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_lamp));
+                break;
+            case "li6cbv5sdlatti0j": //ac
+                viewHolder.status.setVisibility(View.VISIBLE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_ac));
+                break;
+            case "eu0v2xgprrhhg41g": // blinds
+                viewHolder.status.setVisibility(View.GONE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_blinds));
+                break;
+            case "mxztsyjzsrq7iaqc": // alarm
+                viewHolder.status.setVisibility(View.VISIBLE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_alarm));
+                break;
+            case "lsf78ly0eqrjbz91": // door
+                viewHolder.status.setVisibility(View.GONE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_door));
+                break;
+            case "im77xxyulpegfmv8": // oven
+                viewHolder.status.setVisibility(View.VISIBLE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_oven));
+                break;
+            case "rnizejqr2di0okho": // refrigerator
+                viewHolder.status.setVisibility(View.GONE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_refrigerator));
+                break;
+            case "ofglvd9gqX8yfl3l": // timer
+                viewHolder.status.setVisibility(View.VISIBLE);
+                viewHolder.icon.setImageDrawable(context.getDrawable(R.drawable.ic_timer));
+                break;
+        }
     }
 
     @Override
@@ -70,6 +104,9 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
         @BindView(R.id.device_status)
         Switch status;
 
+        @BindView(R.id.device_edit_button)
+        ImageButton editButton;
+
         private ClickListener clickListener;
 
 
@@ -77,9 +114,14 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
             super(v);
         }
 
+        @OnClick(R.id.device_edit_button)
+        public void onEditDeviceClick(){
+            clickListener.onClick(1, device.getId());
+        }
+
         @OnClick(R.id.content_device)
         public void onDeviceClick() {
-            clickListener.onClick(device.getId());
+            clickListener.onClick(0, device.getId());
         }
 
         public ViewHolder(@NonNull View itemView, ClickListener clickListener) {

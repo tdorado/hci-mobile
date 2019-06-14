@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.itba.hci.smarthome.R;
@@ -61,9 +62,6 @@ public class RoutinesAdapter extends RecyclerView.Adapter<RoutinesAdapter.ViewHo
         @BindView(R.id.routine_name)
         TextView name;
 
-        @BindView(R.id.routine_button)
-        Button button;
-
         private ClickListener clickListener;
 
         public ViewHolder(View v) {
@@ -72,7 +70,7 @@ public class RoutinesAdapter extends RecyclerView.Adapter<RoutinesAdapter.ViewHo
 
         @OnClick(R.id.routine_button)
         public void onRoutineClick() {
-            clickListener.onClick(routine.getId());
+            clickListener.onClick(0, routine.getId());
         }
 
         public ViewHolder(@NonNull View itemView, ClickListener clickListener) {

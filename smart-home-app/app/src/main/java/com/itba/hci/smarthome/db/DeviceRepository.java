@@ -2,11 +2,11 @@ package com.itba.hci.smarthome.db;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
-import android.util.Log;
 
 import com.itba.hci.smarthome.model.entities.Device;
 import com.itba.hci.smarthome.service.DeviceService;
 import com.itba.hci.smarthome.model.request.DeviceRequest;
+import com.itba.hci.smarthome.service.payload.BooleanResultResponse;
 import com.itba.hci.smarthome.service.payload.DeviceResponse;
 import com.itba.hci.smarthome.service.payload.DevicesResponse;
 
@@ -25,6 +25,9 @@ public class DeviceRepository {
     private DeviceService deviceService;
     private MutableLiveData<List<Device>> devicesLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> deviceIsCreated;
+    private MutableLiveData<Boolean> deviceIsUpdated;
+    private MutableLiveData<Boolean> deviceIsDeleted;
+    private MutableLiveData<Device> deviceGotten;
 
     public DeviceRepository(DeviceService deviceService) {
         this.deviceService = deviceService;
@@ -87,4 +90,90 @@ public class DeviceRepository {
     public LiveData<Boolean> getDeviceIsCreatedLiveData() {
         return deviceIsCreated;
     }
+
+    public LiveData<Boolean> updateDevice(final String deviceId, final DeviceRequest deviceRequest){
+        deviceIsUpdated = new MutableLiveData<>();
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                deviceService.updateDevice(deviceId, deviceRequest).enqueue(new Callback<BooleanResultResponse>() {
+                    @Override
+                    public void onResponse(Call<BooleanResultResponse> call, Response<BooleanResultResponse> response) {
+                        if(response.body() != null && response.body().getResult()){
+                            deviceIsUpdated.postValue(true);
+                        }
+                        else{
+                            deviceIsUpdated.postValue(false);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BooleanResultResponse> call, Throwable t) {
+                        deviceIsUpdated.postValue(false);
+                    }
+                });
+
+            }
+        });
+
+        return deviceIsUpdated;
+    }
+
+    public LiveData<Boolean> deleteDevice(final String deviceId){
+        deviceIsDeleted = new MutableLiveData<>();
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                deviceService.deleteDevice(deviceId).enqueue(new Callback<BooleanResultResponse>() {
+                    @Override
+                    public void onResponse(Call<BooleanResultResponse> call, Response<BooleanResultResponse> response) {
+                        if(response.body() != null && response.body().getResult()){
+                            deviceIsDeleted.postValue(true);
+                        }
+                        else{
+                            deviceIsDeleted.postValue(false);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<BooleanResultResponse> call, Throwable t) {
+                        deviceIsDeleted.postValue(false);
+                    }
+                });
+
+            }
+        });
+
+        return deviceIsDeleted;
+    }
+
+    public LiveData<Device> getDevice(final String deviceId){
+        deviceGotten = new MutableLiveData<>();
+
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                deviceService.getDevice(deviceId).enqueue(new Callback<DeviceResponse>() {
+                    @Override
+                    public void onResponse(Call<DeviceResponse> call, Response<DeviceResponse> response) {
+                        if(response.body() != null){
+                            deviceGotten.postValue(response.body().getDevice());
+                        }
+                        else{
+                            deviceGotten.postValue(new Device());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<DeviceResponse> call, Throwable t) {
+                        deviceGotten.postValue(new Device());
+                    }
+                });
+            }
+        });
+        return deviceGotten;
+    }
+
 }
