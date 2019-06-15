@@ -21,6 +21,11 @@ android {
 dependencies {
     def lifecycle_version = "1.1.1"
     def room_version = "1.1.1"
+    def retrofit_version = "2.4.0"
+    def dagger_version = "2.11-rc2"
+    def materialdrawer_version = "6.0.9"
+    def butterknife_version = "8.8.1"
+    def gson_version = "2.8.2"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //noinspection GradleCompatible
@@ -34,12 +39,12 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-android-processor:2.11"
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 
-    implementation 'com.google.dagger:dagger:2.11-rc2'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.11-rc2'
-    implementation 'com.google.dagger:dagger-android-support:2.11-rc2'
+    implementation "com.google.dagger:dagger:$dagger_version"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
 
     //MaterialDrawer
-    implementation "com.mikepenz:materialdrawer:6.0.9"
+    implementation "com.mikepenz:materialdrawer:$materialdrawer_version"
 
 
     // ViewModel and LiveData
@@ -47,7 +52,7 @@ dependencies {
 
     // Room
     implementation "android.arch.persistence.room:runtime:$room_version"
-    annotationProcessor "android.arch.persistence.room:compiler:$room_version" // use kapt for Kotlin
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
 
     // optional - RxJava support for Room
     implementation "android.arch.persistence.room:rxjava2:$room_version"
@@ -59,24 +64,13 @@ dependencies {
     testImplementation "android.arch.persistence.room:testing:$room_version"
 
     // Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
 
-    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation "com.google.code.gson:gson:$gson_version"
 
 
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
     implementation 'com.android.support:design:28.0.0'
 }
-
-//configurations.all {
-//    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-//        def requested = details.requested
-//        if (requested.group == 'com.android.support') {
-//            if (!requested.name.startsWith("multidex")) {
-//                details.useVersion '28.0.0'
-//            }
-//        }
-//    }
-//}

@@ -2,10 +2,17 @@ package com.itba.hci.smarthome.service;
 
 import com.itba.hci.smarthome.model.entities.Device;
 import com.itba.hci.smarthome.model.request.DeviceRequest;
+import com.itba.hci.smarthome.model.request.EmptyRequest;
+import com.itba.hci.smarthome.service.payload.AcStateResponse;
+import com.itba.hci.smarthome.service.payload.AlarmStateResponse;
+import com.itba.hci.smarthome.service.payload.BlindsStateResponse;
 import com.itba.hci.smarthome.service.payload.BooleanResultResponse;
 import com.itba.hci.smarthome.service.payload.DeviceResponse;
 import com.itba.hci.smarthome.service.payload.DevicesResponse;
+import com.itba.hci.smarthome.service.payload.DoorStateResponse;
 import com.itba.hci.smarthome.service.payload.IntegerResultResponse;
+import com.itba.hci.smarthome.service.payload.LampStateResponse;
+import com.itba.hci.smarthome.service.payload.OvenStateResponse;
 import com.itba.hci.smarthome.service.payload.StringResultResponse;
 
 import java.util.List;
@@ -45,4 +52,22 @@ public interface DeviceService {
 
     @PUT("devices/{deviceId}/{actionName}")
     Call<IntegerResultResponse> actionWithInteger(@Path("deviceId") String deviceId, @Path("actionName") String actionName, @Body List<Integer> params);
+
+    @PUT("devices/{deviceId}/getState")
+    Call<BlindsStateResponse> getBlindsState(@Path("deviceId") String deviceId, @Body List<String> emptyList);
+
+    @PUT("devices/{deviceId}/getState")
+    Call<LampStateResponse> getLampState(@Path("deviceId") String deviceId, @Body List<String> emptyList);
+
+    @PUT("devices/{deviceId}/getState")
+    Call<OvenStateResponse> getOvenState(@Path("deviceId") String deviceId, @Body List<String> emptyList);
+
+    @PUT("devices/{deviceId}/getState")
+    Call<AcStateResponse> getAcState(@Path("deviceId") String deviceId, @Body List<String> emptyList);
+
+    @PUT("devices/{deviceId}/getState")
+    Call<AlarmStateResponse> getAlarmState(@Path("deviceId") String deviceId, @Body List<String> emptyList);
+
+    @PUT("devices/{deviceId}/getState")
+    Call<DoorStateResponse> getDoorState(@Path("deviceId") String deviceId, @Body List<String> emptyList);
 }

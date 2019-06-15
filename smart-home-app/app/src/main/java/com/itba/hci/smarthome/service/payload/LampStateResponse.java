@@ -1,41 +1,23 @@
 package com.itba.hci.smarthome.service.payload;
 
+import com.itba.hci.smarthome.model.entities.LampState;
+
 public class LampStateResponse {
-    private String status;
-    private String color;
-    private Integer brightness;
+    private LampState result;
 
     public LampStateResponse(){
 
     }
 
-    public LampStateResponse(String status, String color, Integer brightness) {
-        this.status = status;
-        this.color = color;
-        this.brightness = brightness;
+    public LampStateResponse(LampState result) {
+        this.result = result;
     }
 
-    public String getStatus() {
-        return status;
+    public LampState getResult() {
+        return result;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Integer getBrightness() {
-        return brightness;
-    }
-
-    public void setBrightness(Integer brightness) {
-        this.brightness = brightness;
+    public void setResult(LampState result) {
+        this.result = result;
     }
 }

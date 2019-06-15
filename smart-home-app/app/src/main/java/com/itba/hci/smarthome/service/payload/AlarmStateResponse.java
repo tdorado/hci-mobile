@@ -1,21 +1,23 @@
 package com.itba.hci.smarthome.service.payload;
 
+import com.itba.hci.smarthome.model.entities.AlarmState;
+
 public class AlarmStateResponse {
-    private String status;
+    private AlarmState result;
 
     public AlarmStateResponse(){
 
     }
 
-    public AlarmStateResponse(String status) {
-        this.status = status;
+    public AlarmStateResponse(AlarmState result) {
+        this.result = result;
     }
 
-    public String getStatus() {
-        return status;
+    public AlarmState getResult() {
+        return result;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setResult(AlarmState result) {
+        this.result = result;
     }
 }

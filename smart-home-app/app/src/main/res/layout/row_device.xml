@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:src="@drawable/ic_refrigerator" />
+        android:src="@drawable/ic_default" />
 
     <TextView
         android:id="@+id/device_name"
@@ -34,12 +34,13 @@
     <ImageButton
         android:id="@+id/device_edit_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginEnd="65dp"
         android:src="@drawable/ic_edit_device"
-        />
+        android:contentDescription="@string/edit_device" />
 
     <Switch
         android:id="@+id/device_status"

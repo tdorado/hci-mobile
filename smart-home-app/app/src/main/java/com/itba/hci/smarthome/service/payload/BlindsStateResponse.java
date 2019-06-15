@@ -1,31 +1,23 @@
 package com.itba.hci.smarthome.service.payload;
 
+import com.itba.hci.smarthome.model.entities.BlindsState;
+
 public class BlindsStateResponse {
-    private String state;
-    private Integer level;
+    private BlindsState result;
 
     public BlindsStateResponse(){
 
     }
 
-    public BlindsStateResponse(String state, Integer level) {
-        this.state = state;
-        this.level = level;
+    public BlindsStateResponse(BlindsState result) {
+        this.result = result;
     }
 
-    public String getState() {
-        return state;
+    public BlindsState getResult() {
+        return result;
     }
 
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
+    public void setResult(BlindsState result) {
+        this.result = result;
     }
 }
