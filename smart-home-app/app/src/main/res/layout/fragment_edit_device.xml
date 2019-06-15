@@ -29,6 +29,7 @@
                 android:id="@+id/edit_device_name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:hint="@string/name"
                 android:imeOptions="actionNext"

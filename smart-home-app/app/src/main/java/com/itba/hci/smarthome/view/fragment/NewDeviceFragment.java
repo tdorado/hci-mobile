@@ -62,7 +62,7 @@ public class NewDeviceFragment extends SmartHomeFragment{
     public void onNewDeviceAcceptClick(){
         String newDeviceName = newDeviceNameEditText.getText().toString();
         if(newDeviceName.isEmpty()) {
-            showToastError("Ingrese un nombre para el dispositivo");
+            showToastError(getResources().getString(R.string.name_for_device));
         }
         else {
             DeviceRequest deviceRequest = new DeviceRequest(DeviceTypes.getDeviceTypes().get(typesSpinner.getSelectedItemPosition()), newDeviceName, "{}");
@@ -70,9 +70,9 @@ public class NewDeviceFragment extends SmartHomeFragment{
                 @Override
                 public void onChanged(@Nullable Boolean result) {
                     if (result != null && result) {
-                        showToastError("Dispositivo creado correctamente");
+                        showToastError(getResources().getString(R.string.device_update_ok));
                     } else {
-                        showToastError("Algo salió mal al intentar crear dispositivo");
+                        showToastError(getResources().getString(R.string.error_message) + getResources().getString(R.string.intent_update_device));
                     }
                 }
             });

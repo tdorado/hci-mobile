@@ -77,10 +77,12 @@ public class RoutinesFragment extends SmartHomeFragment implements ClickListener
                             i++;
                         }
                     }
-                    if (i == 1)
-                        showToastError(i + " acción de rutina ejecutadas correctamente");
+                    if (i ==0)
+                        showToastError(getResources().getString(R.string.actions_cant_execute));
+                    else if (i == 1)
+                        showToastError(i + getResources().getString(R.string.one_action_executed));
                     else
-                        showToastError(i + " acciones de rutina ejecutadas correctamente");
+                        showToastError(i + getResources().getString(R.string.actions_executed));
                 }
             }
         });

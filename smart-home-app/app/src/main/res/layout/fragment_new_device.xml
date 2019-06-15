@@ -29,6 +29,7 @@
                 android:id="@+id/new_device_name"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:hint="@string/name"
                 android:imeOptions="actionNext"
@@ -48,7 +49,8 @@
             <Spinner
                 android:id="@+id/device_type_spinner"
                 android:layout_width="match_parent"
-                android:layout_height="39dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/main_button"
                 android:entries="@array/device_types_array"
                 android:gravity="center"

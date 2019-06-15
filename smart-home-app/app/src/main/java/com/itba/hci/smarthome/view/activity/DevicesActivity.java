@@ -48,7 +48,7 @@ public class DevicesActivity extends SmartHomeActivity {
         super.onBackPressed();
         if(!this.getMenuDrawer().isDrawerOpen()) {
             if (!close) {
-                showToastError("Presione nuevamente para salir de la aplicación");
+                showToastError(getResources().getString(R.string.double_press));
                 close = true;
             } else {
                 finishAffinity();
