@@ -6,6 +6,12 @@ import com.itba.hci.smarthome.dagger.modules.ApplicationModule;
 import com.itba.hci.smarthome.dagger.modules.DataModule;
 import com.itba.hci.smarthome.dagger.modules.FragmentModule;
 import com.itba.hci.smarthome.dagger.modules.ServiceModule;
+import com.itba.hci.smarthome.db.AcActionsRepository;
+import com.itba.hci.smarthome.db.AlarmActionsRepository;
+import com.itba.hci.smarthome.db.BlindsActionsRepository;
+import com.itba.hci.smarthome.db.DoorActionsRepository;
+import com.itba.hci.smarthome.db.LampActionsRepository;
+import com.itba.hci.smarthome.db.OvenActionsRepository;
 import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.EditDeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.NewDeviceViewModel;
@@ -61,6 +67,18 @@ public interface SmartHomeComponents {
     void inject(EditDeviceViewModel editDeviceViewModel);
 
     void inject(EditDeviceActivity editDeviceActivity);
+
+    void inject(AcActionsRepository acActionsRepository);
+
+    void inject(AlarmActionsRepository alarmActionsRepository);
+
+    void inject(BlindsActionsRepository blindsActionsRepository);
+
+    void inject(OvenActionsRepository ovenActionsRepository);
+
+    void inject(DoorActionsRepository doorActionsRepository);
+
+    void inject(LampActionsRepository lampActionsRepository);
 
 
     final class Initializer {

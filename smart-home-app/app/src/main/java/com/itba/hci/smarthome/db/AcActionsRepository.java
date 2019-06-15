@@ -228,7 +228,7 @@ public class AcActionsRepository {
         return acChangesHorizontalSwing;
     }
 
-    public LiveData<String> setFanSpeed(final String deviceId, final List<String> params){
+    public LiveData<String> setFanSpeedAc(final String deviceId, final List<String> params){
         acChangesFanSpeed = new MutableLiveData<>();
 
         Executors.newSingleThreadExecutor().execute(new Runnable() {
