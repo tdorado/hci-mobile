@@ -1,10 +1,13 @@
 package com.itba.hci.smarthome.view.activity;
 
+import android.app.Notification;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
+import com.itba.hci.smarthome.util.notification.NotificationHelper;
 import com.itba.hci.smarthome.view.Navigator;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
@@ -17,12 +20,27 @@ public class DevicesActivity extends SmartHomeActivity {
 
     private boolean close = false;
 
+    /*
+     * A view model for interacting with the UI elements.
+     */
+    private MainUi mUIModel;
+
+    /*
+     * A helper class for initializing notification channels and sending notifications.
+     */
+    private NotificationHelper mNotificationHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_blank);
         super.onCreate(savedInstanceState);
         navigator.showDevicesFragment(this);
         buildMenuDrawerWithSelectedIdentifier(1);
+
+        mNotificationHelper = new NotificationHelper(this);
+        mUIModel = new MainUi(findViewById(R.id.content_frame));
+        this.sendNotification(12);
+
         getMenuDrawer().setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
@@ -62,5 +80,32 @@ public class DevicesActivity extends SmartHomeActivity {
 
     private void onRoutinesItemClick(){
         navigator.showRoutinesActivity(this);
+    }
+
+    /**
+     * Send activity notifications.
+     *
+     * @param id The ID of the notification to create
+     */
+    private void sendNotification(int id) {
+        Notification.Builder notificationBuilder;
+        notificationBuilder = mNotificationHelper.getNotificationDM("titulo",
+                                        mNotificationHelper.getRandomName());
+        mNotificationHelper.notify(id, notificationBuilder);
+    }
+
+    /**
+     * View model for interacting with Activity UI elements. (Keeps core logic for sample separate.)
+     */
+    class MainUi implements View.OnClickListener {
+
+        private MainUi(View root) {
+            (root.findViewById(R.id.content_frame)).setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Log.d("Llego la notificacion","Llegó vieja");
+        }
     }
 }
