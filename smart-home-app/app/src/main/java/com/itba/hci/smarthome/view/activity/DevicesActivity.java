@@ -27,10 +27,10 @@ public class DevicesActivity extends SmartHomeActivity {
             @Override
             public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                 switch(position){
-                    case 1:
+                    case 0:
                         onDevicesItemClick();
                         return true;
-                    case 2:
+                    case 1:
                         onRoutinesItemClick();
                         return true;
                 }

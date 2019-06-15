@@ -4,6 +4,7 @@ package com.itba.hci.smarthome.view.activity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.itba.hci.smarthome.R;
@@ -86,15 +87,12 @@ public abstract class SmartHomeActivity extends DaggerAppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        AccountHeader header = new AccountHeaderBuilder()
-                .withActivity(this)
-                .withHeaderBackground(R.drawable.header_background)
-                .build();
-
         menuDrawer = new DrawerBuilder()
                 .withActivity(this)
+                .withRootView(R.id.drawer_container)
                 .withToolbar(toolbar)
-                .withAccountHeader(header)
+                .withDisplayBelowStatusBar(false)
+                .withActionBarDrawerToggleAnimated(true)
                 .addDrawerItems(
                         new PrimaryDrawerItem().withIdentifier(1).withName(R.string.devices),
                         new PrimaryDrawerItem().withIdentifier(2).withName(R.string.routines)

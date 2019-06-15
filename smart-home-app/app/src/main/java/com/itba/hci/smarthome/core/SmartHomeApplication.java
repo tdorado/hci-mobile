@@ -49,7 +49,7 @@ public class SmartHomeApplication extends MultiDexApplication implements HasActi
             component.inject(this);
         }
 
-        //this.createShotcut();
+        //this.createShortcut();
     }
 
     @Override
@@ -61,7 +61,7 @@ public class SmartHomeApplication extends MultiDexApplication implements HasActi
         return component;
     }
 
-    public final void createShotcut() {
+    public final void createShortcut() {
         Intent shortcutIntent = new Intent();
         shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, getIntentShortcut());
         shortcutIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, getString(R.string.app_name));
