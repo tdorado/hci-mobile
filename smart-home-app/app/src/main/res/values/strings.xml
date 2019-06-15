@@ -13,7 +13,7 @@
     <string name="routines">Rutinas</string>
     <string name="error_message">Algo ha salido mal en:</string>
     <string name="device_name">Nombre del Dispositivo:</string>
-    <string name="name">NOMBRE</string>
+    <string name="name_hint">(Nombre)</string>
     <string name="device_type">Tipo de Dispositivo:</string>
     <string name="choose_device_type">Elija el Dispositivo</string>
     <string name="execute_routine">Ejecutar Rutina</string>
