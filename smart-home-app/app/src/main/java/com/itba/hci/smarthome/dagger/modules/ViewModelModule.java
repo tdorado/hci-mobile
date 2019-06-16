@@ -11,20 +11,22 @@ import javax.inject.Provider;
 
 public class ViewModelModule implements ViewModelProvider.Factory {
 
-    private Map<Class<ViewModel>, Provider<ViewModel>> creators;
+    private Map<Class<? extends ViewModel>, Provider<ViewModel>> creators;
 
     @Inject
-    public ViewModelModule(Map<Class<ViewModel>, Provider<ViewModel>> creators) {
+    public ViewModelModule(Map<Class<? extends ViewModel>, Provider<ViewModel>> creators) {
         this.creators = creators;
     }
 
+    @SuppressWarnings("unchecked")
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
         if (!creators.containsKey(modelClass))
-            throw new IllegalArgumentException("unknown model class $modelClass");
+            throw new IllegalArgumentException("Unknown ViewModel Class $modelClass");
 
         return (T) creators.get(modelClass);
     }
+
 
 }
