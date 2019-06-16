@@ -9,12 +9,15 @@ import com.itba.hci.smarthome.model.entities.AcState;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class AcViewModel extends SmartHomeViewModel{
-    private AcActionsRepository acActionsRepository;
+    @Inject
+    AcActionsRepository acActionsRepository;
 
     @Override
     public void initialize(SmartHomeComponents component) {
-        component.inject(acActionsRepository);
+        component.inject(this);
     }
 
     public LiveData<AcState> getAcState(String deviceId){

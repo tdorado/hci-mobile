@@ -6,12 +6,15 @@ import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
 import com.itba.hci.smarthome.db.DoorActionsRepository;
 import com.itba.hci.smarthome.model.entities.DoorState;
 
+import javax.inject.Inject;
+
 public class DoorViewModel extends SmartHomeViewModel{
-    private DoorActionsRepository doorActionsRepository;
+    @Inject
+    DoorActionsRepository doorActionsRepository;
 
     @Override
     public void initialize(SmartHomeComponents component) {
-        component.inject(doorActionsRepository);
+        component.inject(this);
     }
 
     public LiveData<DoorState> getDoorState(String deviceId){

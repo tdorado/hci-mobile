@@ -5,25 +5,19 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.model.entities.BlindsState;
-import com.itba.hci.smarthome.model.entities.Device;
-import com.itba.hci.smarthome.model.request.DeviceRequest;
 import com.itba.hci.smarthome.model.viewModel.BlindsViewModel;
-import com.itba.hci.smarthome.model.viewModel.EditDeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
 import com.itba.hci.smarthome.view.Navigator;
 import com.itba.hci.smarthome.view.util.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 

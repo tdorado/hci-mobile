@@ -1,5 +1,6 @@
 <resources>
-    <string name="intent_update_device">Intentar modificar el dispositivo</string>
+    <string name="error_update_device">Algo ha salido mal al intentar modificar el dispositivo</string>
+    <string name="error_create_device">Algo ha salido mal al intentar crear el dispositivo</string>
     <string name="double_press">Presione nuevamente para salir de la aplicación</string>
     <string name="name_for_device">Ingrese un nombre para el dispositivo</string>
     <string name="device_update_ok">Dispositivo modificado correctamente</string>

@@ -12,10 +12,15 @@ import com.itba.hci.smarthome.db.BlindsActionsRepository;
 import com.itba.hci.smarthome.db.DoorActionsRepository;
 import com.itba.hci.smarthome.db.LampActionsRepository;
 import com.itba.hci.smarthome.db.OvenActionsRepository;
+import com.itba.hci.smarthome.model.viewModel.AcViewModel;
+import com.itba.hci.smarthome.model.viewModel.AlarmViewModel;
 import com.itba.hci.smarthome.model.viewModel.BlindsViewModel;
 import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
+import com.itba.hci.smarthome.model.viewModel.DoorViewModel;
 import com.itba.hci.smarthome.model.viewModel.EditDeviceViewModel;
+import com.itba.hci.smarthome.model.viewModel.LampViewModel;
 import com.itba.hci.smarthome.model.viewModel.NewDeviceViewModel;
+import com.itba.hci.smarthome.model.viewModel.OvenViewModel;
 import com.itba.hci.smarthome.model.viewModel.RoutinesViewModel;
 import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
@@ -50,19 +55,13 @@ public interface SmartHomeComponents {
 
     void inject(DevicesActivity devicesActivity);
 
-    void inject(DevicesFragment devicesFragment);
-
     void inject(DeviceViewModel deviceViewModel);
 
     void inject(NewDeviceActivity newDeviceActivity);
 
-    void inject(NewDeviceFragment newDeviceFragment);
-
     void inject(NewDeviceViewModel newDeviceViewModel);
 
     void inject(RoutinesActivity routinesActivity);
-
-    void inject(RoutinesFragment routinesFragment);
 
     void inject(RoutinesViewModel routinesViewModel);
 
@@ -70,21 +69,19 @@ public interface SmartHomeComponents {
 
     void inject(EditDeviceActivity editDeviceActivity);
 
-    void inject(AcActionsRepository acActionsRepository);
-
-    void inject(AlarmActionsRepository alarmActionsRepository);
-
-    void inject(BlindsActionsRepository blindsActionsRepository);
-
-    void inject(OvenActionsRepository ovenActionsRepository);
-
-    void inject(DoorActionsRepository doorActionsRepository);
-
-    void inject(LampActionsRepository lampActionsRepository);
-
     void inject(BlindsActivity blindsActivity);
 
     void inject(BlindsViewModel blindsViewModel);
+
+    void inject(AcViewModel acViewModel);
+
+    void inject(AlarmViewModel alarmViewModel);
+
+    void inject(DoorViewModel doorViewModel);
+
+    void inject(LampViewModel lampViewModel);
+
+    void inject(OvenViewModel ovenViewModel);
 
 
     final class Initializer {

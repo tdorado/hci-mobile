@@ -72,7 +72,7 @@ public class NewDeviceFragment extends SmartHomeFragment{
                     if (result != null && result) {
                         showToastError(getResources().getString(R.string.device_update_ok));
                     } else {
-                        showToastError(getResources().getString(R.string.error_message) + getResources().getString(R.string.intent_update_device));
+                        showToastError(getResources().getString(R.string.error_create_device));
                     }
                 }
             });

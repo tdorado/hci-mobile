@@ -8,12 +8,15 @@ import com.itba.hci.smarthome.db.LampActionsRepository;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class LampViewModel extends SmartHomeViewModel{
-    private LampActionsRepository lampActionsRepository;
+    @Inject
+    LampActionsRepository lampActionsRepository;
 
     @Override
     public void initialize(SmartHomeComponents component) {
-        component.inject(lampActionsRepository);
+        component.inject(this);
     }
 
     public LiveData<Boolean> turnOnLamp(String deviceId){

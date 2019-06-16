@@ -9,12 +9,15 @@ import com.itba.hci.smarthome.model.entities.OvenState;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class OvenViewModel extends SmartHomeViewModel{
-    private OvenActionsRepository ovenActionsRepository;
+    @Inject
+    OvenActionsRepository ovenActionsRepository;
 
     @Override
     public void initialize(SmartHomeComponents component) {
-        component.inject(ovenActionsRepository);
+        component.inject(this);
     }
 
     public LiveData<OvenState> getOvenState(String deviceId){

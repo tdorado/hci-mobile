@@ -29,7 +29,7 @@ import butterknife.OnClick;
 public class EditDeviceFragment extends SmartHomeFragment {
 
     private String deviceId;
-    private Device deviceE;
+    private Device device;
 
     @Inject
     Navigator navigator;
@@ -55,9 +55,9 @@ public class EditDeviceFragment extends SmartHomeFragment {
         super.onCreate(savedInstanceState);
         editDeviceViewModel.getDevice(deviceId).observe(this, new Observer<Device>() {
             @Override
-            public void onChanged(@Nullable Device device) {
-                if(device != null){
-                    deviceE = device;
+            public void onChanged(@Nullable Device d) {
+                if(d != null){
+                    device = d;
                     editDeviceNameEditText.setText(device.getName());
                 }
             }
@@ -86,14 +86,14 @@ public class EditDeviceFragment extends SmartHomeFragment {
             showToastError(getResources().getString(R.string.name_for_device));
         }
         else {
-            DeviceRequest deviceRequest = new DeviceRequest(deviceE.getTypeId(), newDeviceName, deviceE.getMeta());
+            DeviceRequest deviceRequest = new DeviceRequest(device.getTypeId(), newDeviceName, device.getMeta());
             editDeviceViewModel.editDevice(deviceId, deviceRequest).observe(this, new Observer<Boolean>() {
                 @Override
                 public void onChanged(@Nullable Boolean result) {
                     if (result != null && result) {
                         showToastError(getResources().getString(R.string.device_update_ok));
                     } else {
-                        showToastError(getResources().getString(R.string.error_message) + getResources().getString(R.string.intent_update_device));
+                        showToastError(getResources().getString(R.string.error_update_device));
                     }
                 }
             });

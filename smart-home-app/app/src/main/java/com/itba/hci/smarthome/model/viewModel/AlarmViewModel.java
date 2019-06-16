@@ -9,13 +9,16 @@ import com.itba.hci.smarthome.model.entities.AlarmState;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class AlarmViewModel extends SmartHomeViewModel{
-    private AlarmActionsRepository alarmActionsRepository;
+    @Inject
+    AlarmActionsRepository alarmActionsRepository;
 
 
     @Override
     public void initialize(SmartHomeComponents component) {
-        component.inject(alarmActionsRepository);
+        component.inject(this);
     }
 
     public LiveData<AlarmState> getAlarmState(String deviceId){
