@@ -170,8 +170,8 @@
 
     <string name="opening_blinds">Abriendo cortinas</string>
     <string name="closing_blinds">Cerrando cortinas</string>
-    <string name="cant_open_blinds">No se pueden abrir las cortinas todavía</string>
-    <string name="cant_close_blinds">No se pueden cerrar las cortinas todavía</string>
+    <string name="cant_open_blinds">Ya esta abierta o se está abriendo</string>
+    <string name="cant_close_blinds">Ya esta cerrada o se está cerrando</string>
 
 </resources>
 
