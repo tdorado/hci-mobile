@@ -1,10 +1,12 @@
 package com.itba.hci.smarthome.dagger.modules;
 
+import com.itba.hci.smarthome.view.activity.AcActivity;
 import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
 import com.itba.hci.smarthome.view.activity.RoutinesActivity;
+import com.itba.hci.smarthome.view.fragment.AcFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -30,5 +32,8 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector(modules = FragmentModule.class)
     abstract BlindsActivity contributeBlindsActivity();
+
+    @ContributesAndroidInjector(modules = FragmentModule.class)
+    abstract AcActivity contributeAcActivity();
 
 }

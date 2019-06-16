@@ -64,8 +64,8 @@ public class BlindsFragment extends SmartHomeFragment {
             public void onChanged(@Nullable BlindsState b) {
                 if(b != null) {
                     blindsState = b;
-                    blindStatusText.setText(getString(CommonUtils.getIdResourceBlinds(b.getStatus())));
-                    blindsLevelText.setText(blindsState.getLevel().toString());
+                    blindStatusText.setText(getString(CommonUtils.getResourceId(b.getStatus())));
+                    blindsLevelText.setText(String.valueOf(blindsState.getLevel()));
                 }
             }
         });

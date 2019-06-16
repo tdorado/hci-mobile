@@ -45,7 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="ESTADO"
+                        android:text="@string/status_caps"
                         android:textColor="@color/black"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -71,7 +71,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="ESTADO"
+                        android:text="@string/status_caps"
                         android:textColor="@color/black"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -97,7 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="ESTADO"
+                        android:text="@string/status_caps"
                         android:textColor="@color/black"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -123,7 +123,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="ESTADO"
+                        android:text="@string/status_caps"
                         android:textColor="@color/black"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -149,7 +149,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="ESTADO"
+                        android:text="@string/status_caps"
                         android:textColor="@color/black"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -175,7 +175,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="ESTADO"
+                        android:text="@string/status_caps"
                         android:textColor="@color/black"
                         android:textSize="25sp" />
                 </LinearLayout>
@@ -208,7 +208,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/main_button"
-                    android:entries="@array/lamp_actions_array"
+                    android:entries="@array/ac_actions_array"
                     android:gravity="center" />
 
             </LinearLayout>

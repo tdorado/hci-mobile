@@ -30,6 +30,21 @@
     <string name="closed">Cerrado</string>
     <string name="closing">Cerrando</string>
     <string name="opening">Abriendo</string>
+    <string name="on">Encendido</string>
+    <string name="off">Apagado</string>
+    <string name="cool">Frío</string>
+    <string name="heat">Calor</string>
+    <string name="fan">Ventilador</string>
+    <string name="auto">Automático</string>
+    <string name="turn_on">Dispositivo encendido</string>
+    <string name="turn_off">Dispositivo apagado</string>
+    <string name="cant_turn_on">El dispositivo ya está encendido</string>
+    <string name="cant_turn_off">El dispositivo ya está apagado</string>
+    <string name="device_not_implemented">Dispositivo no implementado</string>
+    <string name="action_done">Acción realizada correctamente</string>
+    <string name="current_option">El dispositivo ya está con esa configuración</string>
+    <string name="configuration_changed">Configuración cambiada correctamente</string>
+    <string name="invalid_params">Parámetros inválidos de acción</string>
     <string name="status_caps">ESTADO</string>
 
     <string-array name="device_types_array">

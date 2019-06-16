@@ -83,8 +83,28 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
             case 0:
                 navigator.showEditDeviceActivity(this, idItemClicked);
                 break;
+            case 1:
+                //navigator.showLampActivity(this, idItemClicked);
+                break;
+            case 2:
+                navigator.showAcActivity(this, idItemClicked);
+                break;
             case 3:
                 navigator.showBlindsActivity(this, idItemClicked);
+                break;
+            case 4:
+                //navigator.showAlarmActivity(this, idItemClicked);
+                break;
+            case 5:
+                //navigator.showDoorActivity(this, idItemClicked);
+                break;
+            case 6:
+                //navigator.showOvenActivity(this, idItemClicked);
+                break;
+            case 7:
+            case 8:
+                showToastError(getString(R.string.device_not_implemented));
+                break;
         }
     }
 }

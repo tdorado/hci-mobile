@@ -1,5 +1,6 @@
 package com.itba.hci.smarthome.dagger.modules;
 
+import com.itba.hci.smarthome.view.fragment.AcFragment;
 import com.itba.hci.smarthome.view.fragment.BlindsFragment;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
@@ -33,4 +34,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract BlindsFragment contributeBlindsFragment();
+
+    @ContributesAndroidInjector
+    abstract AcFragment contributeAcFragment();
 }
