@@ -12,10 +12,12 @@ import com.itba.hci.smarthome.db.BlindsActionsRepository;
 import com.itba.hci.smarthome.db.DoorActionsRepository;
 import com.itba.hci.smarthome.db.LampActionsRepository;
 import com.itba.hci.smarthome.db.OvenActionsRepository;
+import com.itba.hci.smarthome.model.viewModel.BlindsViewModel;
 import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.EditDeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.NewDeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.RoutinesViewModel;
+import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
@@ -79,6 +81,10 @@ public interface SmartHomeComponents {
     void inject(DoorActionsRepository doorActionsRepository);
 
     void inject(LampActionsRepository lampActionsRepository);
+
+    void inject(BlindsActivity blindsActivity);
+
+    void inject(BlindsViewModel blindsViewModel);
 
 
     final class Initializer {

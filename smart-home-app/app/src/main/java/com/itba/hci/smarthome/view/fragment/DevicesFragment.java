@@ -79,11 +79,12 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
 
     @Override
     public void onClick(int item, String idItemClicked) {
-        if(item == 0) {
-            //navigator.showDeviceDataActivity(this, idItemClicked);
-        }
-        else if(item == 1){
-            navigator.showEditDeviceActivity(this, idItemClicked);
+        switch(item) {
+            case 0:
+                navigator.showEditDeviceActivity(this, idItemClicked);
+                break;
+            case 3:
+                navigator.showBlindsActivity(this, idItemClicked);
         }
     }
 }

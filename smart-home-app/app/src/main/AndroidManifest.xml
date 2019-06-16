@@ -37,6 +37,7 @@
         <activity android:name=".view.activity.NewDeviceActivity"/>
         <activity android:name=".view.activity.RoutinesActivity"/>
         <activity android:name=".view.activity.EditDeviceActivity"/>
+        <activity android:name=".view.activity.BlindsActivity"/>
 
     </application>
 

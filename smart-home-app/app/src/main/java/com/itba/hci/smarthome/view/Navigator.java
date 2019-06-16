@@ -5,11 +5,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 
 import com.itba.hci.smarthome.R;
+import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
 import com.itba.hci.smarthome.view.activity.RoutinesActivity;
 import com.itba.hci.smarthome.view.activity.SmartHomeActivity;
+import com.itba.hci.smarthome.view.fragment.BlindsFragment;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.NewDeviceFragment;
@@ -69,6 +71,12 @@ public class Navigator {
         devicesFragment.startActivity(intent);
     }
 
+    public void showBlindsActivity(DevicesFragment devicesFragment, String idItemClicked){
+        Intent intent = new Intent(devicesFragment.getContext(), BlindsActivity.class);
+        intent.putExtra("deviceId", idItemClicked);
+        devicesFragment.startActivity(intent);
+    }
+
     /**
      * Fragments
      * <p>
@@ -92,6 +100,10 @@ public class Navigator {
         openFragment(editDeviceActivity, EditDeviceFragment.newInstance(deviceId), editDeviceActivity.getResources().getString(R.string.edit_device), false);
     }
 
+    public void showBlindsFragment(BlindsActivity blindsActivity, String deviceId) {
+        openFragment(blindsActivity, BlindsFragment.newInstance(deviceId), blindsActivity.getResources().getString(R.string.blinds_status), false);
+    }
+
     private Fragment openFragment(SmartHomeActivity from, Fragment fragment, String name, boolean addToBackStack) {
         FragmentTransaction transaction = from.getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.content_frame, fragment, name);
@@ -102,7 +114,6 @@ public class Navigator {
         from.invalidateOptionsMenu();
         return fragment;
     }
-
 
 }
 

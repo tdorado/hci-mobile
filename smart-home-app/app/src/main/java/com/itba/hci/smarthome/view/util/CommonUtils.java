@@ -1,10 +1,30 @@
 package com.itba.hci.smarthome.view.util;
 
-import java.util.Date;
+import com.itba.hci.smarthome.R;
 
 public class CommonUtils {
-    public String getCuantoTiempoFalta(Date fechaEntrega) {
-        //todo devolver "faltan x mins", hacer el calculo con new Date() que devuelve el dia actual
-        return null;
+
+    public static int getIdResourceBlinds(String status) {
+        switch(status){
+            case "opened":
+                return R.string.opened;
+            case "closed":
+                return R.string.closed;
+            case "closing":
+                return R.string.closing;
+            case "opening":
+                return R.string.opening;
+        }
+        return R.string.status_caps;
+    }
+
+    public static String getBlindsActionItemArray(int item){
+        switch(item){
+            case 1:
+                return "open";
+            case 2:
+                return "close";
+        }
+        return "";
     }
 }

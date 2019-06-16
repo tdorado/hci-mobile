@@ -1,7 +1,7 @@
 package com.itba.hci.smarthome.model.entities;
 
 public class BlindsState {
-    private String state;
+    private String status;
     private Integer level;
 
     public BlindsState(){
@@ -9,16 +9,16 @@ public class BlindsState {
     }
 
     public BlindsState(String state, Integer level) {
-        this.state = state;
+        this.status = state;
         this.level = level;
     }
 
-    public String getState() {
-        return state;
+    public String getStatus() {
+        return status;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setStatus(String state) {
+        this.status = state;
     }
 
     public Integer getLevel() {

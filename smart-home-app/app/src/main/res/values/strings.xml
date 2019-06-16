@@ -11,6 +11,8 @@
     <string name="edit_device">Editar Dispositivo</string>
     <string name="devices">Dispositivos</string>
     <string name="routines">Rutinas</string>
+    <string name="level">Nivel:</string>
+    <string name="error">Algo ha salido mal</string>
     <string name="error_message">Algo ha salido mal en:</string>
     <string name="device_name">Nombre del Dispositivo:</string>
     <string name="name_hint">(Nombre)</string>
@@ -23,6 +25,12 @@
     <string name="blinds_status">Estado Cortinas</string>
     <string name="oven_status">Estado Horno</string>
     <string name="ac_status">Estado Aire Acondicionado</string>
+    <string name="opened">Abierto</string>
+    <string name="closed">Cerrado</string>
+    <string name="closing">Cerrando</string>
+    <string name="opening">Abriendo</string>
+    <string name="status_caps">ESTADO</string>
+
     <string-array name="device_types_array">
         <item>Lámpara</item>
         <item>Aire Acondicionado</item>
@@ -160,6 +168,10 @@
         <item>Apagado</item>
     </string-array>
 
+    <string name="opening_blinds">Abriendo cortinas</string>
+    <string name="closing_blinds">Cerrando cortinas</string>
+    <string name="cant_open_blinds">No se pueden abrir las cortinas todavía</string>
+    <string name="cant_close_blinds">No se pueden cerrar las cortinas todavía</string>
 
 </resources>
 

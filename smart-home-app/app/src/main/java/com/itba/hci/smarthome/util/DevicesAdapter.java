@@ -116,12 +116,12 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
 
         @OnClick(R.id.device_edit_button)
         public void onEditDeviceClick(){
-            clickListener.onClick(1, device.getId());
+            clickListener.onClick(0, device.getId());
         }
 
         @OnClick(R.id.content_device)
         public void onDeviceClick() {
-            clickListener.onClick(0, device.getId());
+            clickListener.onClick(DeviceTypes.getItemForDeviceType(device), device.getId());
         }
 
         public ViewHolder(@NonNull View itemView, ClickListener clickListener) {

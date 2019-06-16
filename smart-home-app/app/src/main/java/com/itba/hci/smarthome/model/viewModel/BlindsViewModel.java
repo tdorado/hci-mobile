@@ -6,12 +6,15 @@ import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
 import com.itba.hci.smarthome.db.BlindsActionsRepository;
 import com.itba.hci.smarthome.model.entities.BlindsState;
 
+import javax.inject.Inject;
+
 public class BlindsViewModel extends SmartHomeViewModel{
-    private BlindsActionsRepository blindsActionsRepository;
+    @Inject
+    BlindsActionsRepository blindsActionsRepository;
 
     @Override
     public void initialize(SmartHomeComponents component) {
-        component.inject(blindsActionsRepository);
+        component.inject(this);
     }
 
     public LiveData<BlindsState> getBlindsState(String deviceId){

@@ -50,6 +50,31 @@
                         android:textSize="25sp" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@string/level"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"/>
+
+                    <TextView
+                        android:id="@+id/blinds_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="ESTADO"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
