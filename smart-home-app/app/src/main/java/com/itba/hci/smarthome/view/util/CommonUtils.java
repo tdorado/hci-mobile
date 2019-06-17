@@ -27,6 +27,18 @@ public class CommonUtils {
                 return R.string.heat;
             case "fan":
                 return R.string.fan;
+            case "conventional":
+                return R.string.conventional;
+            case "bottom":
+                return R.string.bottom;
+            case "top":
+                return R.string.top;
+            case "large":
+                return R.string.large;
+            case "eco":
+                return R.string.eco;
+            case "normal":
+                return R.string.normal;
         }
         return R.string.status_caps;
     }
@@ -45,11 +57,48 @@ public class CommonUtils {
                 return "cool";
             case 1:
                 return "heat";
-            case 3:
+            case 2:
                 return "fan";
         }
         return "null";
     }
+
+    public static String getHeatFromArray(int position) {
+        switch(position){
+            case 0:
+                return "conventional";
+            case 1:
+                return "bottom";
+            case 2:
+                return "top";
+        }
+        return "null";
+    }
+
+    public static String getGrillFromArray(int position) {
+        switch(position){
+            case 0:
+                return "large";
+            case 1:
+                return "eco";
+            case 2:
+                return "off";
+        }
+        return "null";
+    }
+
+    public static String getConvectionFromArray(int position) {
+        switch(position){
+            case 0:
+                return "normal";
+            case 1:
+                return "eco";
+            case 2:
+                return "off";
+        }
+        return "null";
+    }
+
 
     public static String getStringItemWithAuto(Spinner spinner) {
         if(spinner.getSelectedItemPosition() == 0){

@@ -6,6 +6,9 @@
     android:layout_marginEnd="10dp"
     android:layout_marginTop="10dp"
     android:id="@+id/content_device"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
     android:background="@drawable/main_button">
 
     <ImageView
@@ -29,7 +32,7 @@
         android:fontFamily="@font/roboto_bold"
         android:textColor="@color/black"
         android:textSize="17sp"
-        android:text="Device"/>
+        android:text="@string/device"/>
 
     <ImageButton
         android:id="@+id/device_edit_button"

@@ -36,6 +36,12 @@
     <string name="heat">Calor</string>
     <string name="fan">Ventilador</string>
     <string name="auto">Automático</string>
+    <string name="normal">Normal</string>
+    <string name="eco">Económico</string>
+    <string name="conventional">Convencional</string>
+    <string name="top">Arriba</string>
+    <string name="bottom">Abajo</string>
+    <string name="large">Grande</string>
     <string name="turn_on">Dispositivo encendido</string>
     <string name="turn_off">Dispositivo apagado</string>
     <string name="cant_turn_on">El dispositivo ya está encendido</string>
@@ -45,6 +51,8 @@
     <string name="current_option">El dispositivo ya está con esa configuración</string>
     <string name="configuration_changed">Configuración cambiada correctamente</string>
     <string name="invalid_params">Parámetros inválidos de acción</string>
+    <string name="device">Dispositivo</string>
+    <string name="routine">Rutina</string>
     <string name="status_caps">ESTADO</string>
 
     <string-array name="device_types_array">
@@ -168,8 +176,8 @@
     <string name="set_heat">Ingrese Calor:</string>
     <string-array name="oven_heat_array">
         <item>Convencional</item>
-        <item>Arriba</item>
         <item>Abajo</item>
+        <item>Arriba</item>
     </string-array>
     <string name="set_grill">Ingrese Grill:</string>
     <string-array name="oven_grill_array">

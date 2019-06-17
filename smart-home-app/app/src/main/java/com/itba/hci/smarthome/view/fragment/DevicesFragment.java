@@ -59,6 +59,7 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
         devices.setAdapter(devicesAdapter);
     }
 
+    @Override
     public void onResume() {
         super.onResume();
         deviceViewModel.getAllDevices().
@@ -99,7 +100,7 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
                 //navigator.showDoorActivity(this, idItemClicked);
                 break;
             case 6:
-                //navigator.showOvenActivity(this, idItemClicked);
+                navigator.showOvenActivity(this, idItemClicked);
                 break;
             case 7:
             case 8:

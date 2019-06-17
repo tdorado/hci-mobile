@@ -10,6 +10,7 @@ import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
+import com.itba.hci.smarthome.view.activity.OvenActivity;
 import com.itba.hci.smarthome.view.activity.RoutinesActivity;
 import com.itba.hci.smarthome.view.activity.SmartHomeActivity;
 import com.itba.hci.smarthome.view.fragment.AcFragment;
@@ -17,9 +18,12 @@ import com.itba.hci.smarthome.view.fragment.BlindsFragment;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.NewDeviceFragment;
+import com.itba.hci.smarthome.view.fragment.OvenFragment;
 import com.itba.hci.smarthome.view.fragment.RoutinesFragment;
 import com.itba.hci.smarthome.view.fragment.SmartHomeFragment;
 import com.mikepenz.materialdrawer.DrawerBuilder;
+
+import javax.inject.Inject;
 
 /**
  * this class is use to navigate between activities and fragments
@@ -85,6 +89,12 @@ public class Navigator {
         devicesFragment.startActivity(intent);
     }
 
+    public void showOvenActivity(DevicesFragment devicesFragment, String idItemClicked) {
+        Intent intent = new Intent(devicesFragment.getContext(), OvenActivity.class);
+        intent.putExtra("deviceId", idItemClicked);
+        devicesFragment.startActivity(intent);
+    }
+
     /**
      * Fragments
      * <p>
@@ -114,6 +124,10 @@ public class Navigator {
 
     public void showAcFragment(AcActivity acActivity, String deviceId) {
         openFragment(acActivity, AcFragment.newInstance(deviceId), acActivity.getResources().getString(R.string.ac_status), false);
+    }
+
+    public void showOvenFragment(OvenActivity ovenActivity, String deviceId) {
+        openFragment(ovenActivity, OvenFragment.newInstance(deviceId), ovenActivity.getString(R.string.oven_status), false);
     }
 
     private Fragment openFragment(SmartHomeActivity from, Fragment fragment, String name, boolean addToBackStack) {

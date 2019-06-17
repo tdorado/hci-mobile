@@ -5,6 +5,7 @@ import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
+import com.itba.hci.smarthome.view.activity.OvenActivity;
 import com.itba.hci.smarthome.view.activity.RoutinesActivity;
 import com.itba.hci.smarthome.view.fragment.AcFragment;
 
@@ -35,5 +36,8 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector(modules = FragmentModule.class)
     abstract AcActivity contributeAcActivity();
+
+    @ContributesAndroidInjector(modules = FragmentModule.class)
+    abstract OvenActivity contributeOvenActivity();
 
 }
