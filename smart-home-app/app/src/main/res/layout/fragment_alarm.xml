@@ -79,7 +79,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/main_button"
-                    android:entries="@array/lamp_actions_array"
+                    android:entries="@array/alarm_actions_array"
                     android:gravity="center" />
 
             </LinearLayout>
@@ -115,8 +115,9 @@
                     android:background="@drawable/main_button"
                     android:hint="@string/current_security_code_hint"
                     android:singleLine="true"
+                    android:maxLength="4"
                     android:imeOptions="actionDone"
-                    android:inputType="textPassword"
+                    android:inputType="numberPassword"
                     android:gravity="center" />
 
             </LinearLayout>
@@ -152,8 +153,9 @@
                     android:background="@drawable/main_button"
                     android:hint="@string/new_security_code_hint"
                     android:singleLine="true"
+                    android:maxLength="4"
                     android:imeOptions="actionDone"
-                    android:inputType="textPassword"
+                    android:inputType="numberPassword"
                     android:gravity="center" />
 
             </LinearLayout>

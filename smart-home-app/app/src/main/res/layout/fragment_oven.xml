@@ -218,6 +218,7 @@
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/main_button"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:hint="@string/oven_temperature_hint"
                     android:singleLine="true"
                     android:imeOptions="actionDone"

@@ -42,6 +42,9 @@
     <string name="top">Arriba</string>
     <string name="bottom">Abajo</string>
     <string name="large">Grande</string>
+    <string name="armedStay">Activada Adentro</string>
+    <string name="armedAway">Activada Afuera</string>
+    <string name="disarmed">Desactivada</string>
     <string name="turn_on">Dispositivo encendido</string>
     <string name="turn_off">Dispositivo apagado</string>
     <string name="cant_turn_on">El dispositivo ya está encendido</string>
@@ -51,6 +54,15 @@
     <string name="current_option">El dispositivo ya está con esa configuración</string>
     <string name="configuration_changed">Configuración cambiada correctamente</string>
     <string name="invalid_params">Parámetros inválidos de acción</string>
+    <string name="alarm_invalid_code">Código ingresado en formato incorrecto(cuatro dígitos)</string>
+    <string name="alarm_invalid_current_code">Código actual ingresado en formato incorrecto(cuatro dígitos)</string>
+    <string name="alarm_invalid_new_code">Código nuevo ingresado en formato incorrecto(cuatro dígitos)</string>
+    <string name="alarm_code_changed">Código cambiado correctamente</string>
+    <string name="alarm_wrong_code">Código actual ingresado incorrecto</string>
+    <string name="alarm_activated">Alarma activada</string>
+    <string name="alarm_already_armed">Alarma ya activada</string>
+    <string name="alarm_already_disarmed">Alarma ya desactivada</string>
+    <string name="alarm_disarmed">Alarma desactivada</string>
     <string name="device">Dispositivo</string>
     <string name="routine">Rutina</string>
     <string name="status_caps">ESTADO</string>
@@ -107,9 +119,9 @@
     </string-array>
 
     <string name="set_current_security_code">Ingrese el Código Actual:</string>
-    <string name="current_security_code_hint">(Código Actual)</string>
+    <string name="current_security_code_hint">(Cuatro Dígitos)</string>
     <string name="set_new_security_code">Ingrese el Código Nuevo:</string>
-    <string name="new_security_code_hint">(Código Nuevo)</string>
+    <string name="new_security_code_hint">(Cuatro Dígitos)</string>
 
     <string name="ac_temperature">Temperatura:</string>
     <string name="ac_mode">Modo:</string>
@@ -190,6 +202,14 @@
         <item>Normal</item>
         <item>Económico</item>
         <item>Apagado</item>
+    </string-array>
+
+    <string-array name="alarm_actions_array">
+        <item>Ninguna</item>
+        <item>Cambiar Código Actual</item>
+        <item>Activar Modo Adentro</item>
+        <item>Activar Modo Afuera</item>
+        <item>Desactivar</item>
     </string-array>
 
     <string name="opening_blinds">Abriendo cortinas</string>

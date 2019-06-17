@@ -168,7 +168,7 @@ public class AcFragment extends SmartHomeFragment {
     }
 
     @OnClick(R.id.button_accept)
-    public void onEditDeviceAcceptClick(){
+    public void onAcceptClick(){
         boolean goBack = true;
         if(actionSpinner.getSelectedItemPosition() == 1){
             if(acState.getStatus().equals("on")){

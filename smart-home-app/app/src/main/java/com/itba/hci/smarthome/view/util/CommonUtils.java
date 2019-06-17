@@ -39,6 +39,12 @@ public class CommonUtils {
                 return R.string.eco;
             case "normal":
                 return R.string.normal;
+            case "armedStay":
+                return R.string.armedStay;
+            case "armedAway":
+                return R.string.armedAway;
+            case "disarmed":
+                return R.string.disarmed;
         }
         return R.string.status_caps;
     }

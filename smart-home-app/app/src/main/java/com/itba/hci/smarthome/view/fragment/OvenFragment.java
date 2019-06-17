@@ -153,7 +153,7 @@ public class OvenFragment extends SmartHomeFragment {
     }
 
     @OnClick(R.id.button_accept)
-    public void onEditDeviceAcceptClick(){
+    public void onAcceptClick(){
         boolean goBack = true;
         if(actionSpinner.getSelectedItemPosition() == 1){
             if(ovenState.getStatus().equals("on")){

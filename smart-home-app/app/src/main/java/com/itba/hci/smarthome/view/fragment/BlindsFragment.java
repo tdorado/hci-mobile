@@ -87,7 +87,7 @@ public class BlindsFragment extends SmartHomeFragment {
     }
 
     @OnClick(R.id.button_accept)
-    public void onEditDeviceAcceptClick(){
+    public void onAcceptClick(){
         if(actionSpinner.getSelectedItemPosition() == 1){
             blindsViewModel.openBlinds(deviceId).observe(this, new Observer<Boolean>() {
                 @Override
