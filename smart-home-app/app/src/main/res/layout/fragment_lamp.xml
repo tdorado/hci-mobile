@@ -167,6 +167,7 @@
                     android:inputType="number"
                     android:background="@drawable/main_button"
                     android:hint="@string/lamp_brightness_hint"
+                    android:maxLength="3"
                     android:singleLine="true"
                     android:imeOptions="actionDone"
                     android:gravity="center" />

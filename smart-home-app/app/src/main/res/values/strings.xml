@@ -110,7 +110,7 @@
     <string name="set_color">Seleccione Color:</string>
     <string-array name="lamp_actions_array">
         <item>Ninguna</item>
-        <item>Endender</item>
+        <item>Encender</item>
         <item>Apagar</item>
         <item>Cambiar Color</item>
         <item>Cambiar Brillo</item>
@@ -123,6 +123,12 @@
         <item>Verde</item>
         <item>Negro</item>
     </string-array>
+    <string name="white">Blanco</string>
+    <string name="red">Rojo</string>
+    <string name="blue">Azul</string>
+    <string name="yellow">Amarillo</string>
+    <string name="green">Verde</string>
+    <string name="black">Negro</string>
 
     <string name="status">Estado:</string>
     <string name="percentage">Porcentaje:</string>

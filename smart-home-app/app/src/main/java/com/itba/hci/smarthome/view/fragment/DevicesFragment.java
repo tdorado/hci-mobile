@@ -85,7 +85,7 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
                 navigator.showEditDeviceActivity(this, idItemClicked);
                 break;
             case 1:
-                //navigator.showLampActivity(this, idItemClicked);
+                navigator.showLampActivity(this, idItemClicked);
                 break;
             case 2:
                 navigator.showAcActivity(this, idItemClicked);

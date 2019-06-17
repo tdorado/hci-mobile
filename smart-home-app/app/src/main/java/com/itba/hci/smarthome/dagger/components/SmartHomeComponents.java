@@ -28,6 +28,7 @@ import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.DoorActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
+import com.itba.hci.smarthome.view.activity.LampActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
 import com.itba.hci.smarthome.view.activity.OvenActivity;
 import com.itba.hci.smarthome.view.activity.RoutinesActivity;
@@ -94,6 +95,8 @@ public interface SmartHomeComponents {
     void inject(AlarmActivity alarmActivity);
 
     void inject(DoorActivity doorActivity);
+
+    void inject(LampActivity lampActivity);
 
 
     final class Initializer {

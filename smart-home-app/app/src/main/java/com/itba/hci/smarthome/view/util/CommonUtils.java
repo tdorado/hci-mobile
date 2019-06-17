@@ -92,6 +92,18 @@ public class CommonUtils {
                 return R.string.locked;
             case "unlocked":
                 return R.string.unlocked;
+            case "FFFFFF":
+                return R.string.white;
+            case "000000":
+                return R.string.black;
+            case "00FF00":
+                return R.string.green;
+            case "0000FF":
+                return R.string.blue;
+            case "FF0000":
+                return R.string.red;
+            case "FFFF00":
+                return R.string.yellow;
         }
         return R.string.status_caps;
     }
@@ -114,6 +126,24 @@ public class CommonUtils {
                 return "fan";
         }
         return "null";
+    }
+
+    public static String getColorFromArray(int position){
+        switch(position){
+            case 0:
+                return "FFFFFF";
+            case 1:
+                return "FF0000";
+            case 2:
+                return "0000FF";
+            case 3:
+                return "FFFF00";
+            case 4:
+                return "00FF00";
+            case 5:
+                return "000000";
+        }
+        return "FFFFFF";
     }
 
     public static String getHeatFromArray(int position) {

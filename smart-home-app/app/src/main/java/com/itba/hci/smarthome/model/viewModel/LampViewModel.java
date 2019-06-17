@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 
 import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
 import com.itba.hci.smarthome.db.LampActionsRepository;
+import com.itba.hci.smarthome.model.entities.LampState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,10 @@ public class LampViewModel extends SmartHomeViewModel{
     @Override
     public void initialize(SmartHomeComponents component) {
         component.inject(this);
+    }
+
+    public LiveData<LampState> getLampState(String deviceId){
+        return lampActionsRepository.getLampState(deviceId);
     }
 
     public LiveData<Boolean> turnOnLamp(String deviceId){
