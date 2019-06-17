@@ -88,6 +88,10 @@ public class CommonUtils {
                 return R.string.armedAway;
             case "disarmed":
                 return R.string.disarmed;
+            case "locked":
+                return R.string.locked;
+            case "unlocked":
+                return R.string.unlocked;
         }
         return R.string.status_caps;
     }

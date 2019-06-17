@@ -45,6 +45,8 @@
     <string name="armedStay">Activada Adentro</string>
     <string name="armedAway">Activada Afuera</string>
     <string name="disarmed">Desactivada</string>
+    <string name="locked">Trabado</string>
+    <string name="unlocked">Destrabado</string>
     <string name="turn_on">Dispositivo encendido</string>
     <string name="turn_off">Dispositivo apagado</string>
     <string name="cant_turn_on">El dispositivo ya está encendido</string>
@@ -87,6 +89,18 @@
         <item>Trabar</item>
         <item>Destrabar</item>
     </string-array>
+    <string name="door_already_opened">Puerta ya abierta</string>
+    <string name="door_already_closed">Puerta ya cerrada</string>
+    <string name="door_already_locked">Puerta ya trabada</string>
+    <string name="door_already_unlocked">Puerta ya destrabada</string>
+    <string name="door_opened">Puerta abierta</string>
+    <string name="door_closed">Puerta cerrada</string>
+    <string name="door_locked">Puerta trabada</string>
+    <string name="door_unlocked">Puerta destrabada</string>
+    <string name="cant_open_door">No se pudo abrir la puerta</string>
+    <string name="cant_close_door">No se pudo cerrar la puerta</string>
+    <string name="cant_lock_door">No se pudo trabar la puerta</string>
+    <string name="cant_unlock_door">No se pudo destrabar la puerta</string>
 
 
     <string name="lamp_color">Color:</string>

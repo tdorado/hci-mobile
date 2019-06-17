@@ -4,6 +4,7 @@ import com.itba.hci.smarthome.view.fragment.AcFragment;
 import com.itba.hci.smarthome.view.fragment.AlarmFragment;
 import com.itba.hci.smarthome.view.fragment.BlindsFragment;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
+import com.itba.hci.smarthome.view.fragment.DoorFragment;
 import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.NewDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.OvenFragment;
@@ -45,4 +46,7 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract AlarmFragment contributeAlarmFragment();
+
+    @ContributesAndroidInjector
+    abstract DoorFragment contributeDoorFragment();
 }

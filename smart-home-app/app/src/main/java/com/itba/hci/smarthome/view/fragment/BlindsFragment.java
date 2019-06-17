@@ -88,38 +88,52 @@ public class BlindsFragment extends SmartHomeFragment {
 
     @OnClick(R.id.button_accept)
     public void onAcceptClick(){
+        boolean goBack = true;
+        String blindsStatus = blindsState.getStatus();
+
         if(actionSpinner.getSelectedItemPosition() == 1){
-            blindsViewModel.openBlinds(deviceId).observe(this, new Observer<Boolean>() {
-                @Override
-                public void onChanged(@Nullable Boolean aBoolean) {
-                    if(aBoolean != null && aBoolean){
-                        showToastError(getString(R.string.opening_blinds));
+            if(blindsStatus.equals("opened") || blindsStatus.equals("opening")){
+                goBack = false;
+                showToastError(getString(R.string.cant_open_blinds));
+            }
+            else {
+                blindsViewModel.openBlinds(deviceId).observe(this, new Observer<Boolean>() {
+                    @Override
+                    public void onChanged(@Nullable Boolean aBoolean) {
+                        if (aBoolean != null && aBoolean) {
+                            showToastError(getString(R.string.opening_blinds));
+                        } else if (aBoolean != null) {
+                            showToastError(getString(R.string.cant_open_blinds));
+                        } else {
+                            showToastError(getString(R.string.error));
+                        }
                     }
-                    else if(aBoolean != null){
-                        showToastError(getString(R.string.cant_open_blinds));
-                    }
-                    else{
-                        showToastError(getString(R.string.error));
-                    }
-                }
-            });
+                });
+            }
         }
         else if(actionSpinner.getSelectedItemPosition() == 2){
-            blindsViewModel.closeBlinds(deviceId).observe(this, new Observer<Boolean>() {
-                @Override
-                public void onChanged(@Nullable Boolean aBoolean) {
-                    if(aBoolean != null && aBoolean){
-                        showToastError(getString(R.string.closing_blinds));
+            if(blindsStatus.equals("closed") || blindsStatus.equals("closing")){
+                goBack = false;
+                showToastError(getString(R.string.cant_close_blinds));
+            }
+            else {
+                blindsViewModel.closeBlinds(deviceId).observe(this, new Observer<Boolean>() {
+                    @Override
+                    public void onChanged(@Nullable Boolean aBoolean) {
+                        if (aBoolean != null && aBoolean) {
+                            showToastError(getString(R.string.closing_blinds));
+                        } else if (aBoolean != null) {
+                            showToastError(getString(R.string.cant_close_blinds));
+                        } else {
+                            showToastError(getString(R.string.error));
+                        }
                     }
-                    else if(aBoolean != null){
-                        showToastError(getString(R.string.cant_close_blinds));
-                    }
-                    else{
-                        showToastError(getString(R.string.error));
-                    }
-                }
-            });
+                });
+            }
         }
-        navigator.showDevicesActivity(this);
+
+        if(goBack) {
+            navigator.showDevicesActivity(this);
+        }
     }
 }

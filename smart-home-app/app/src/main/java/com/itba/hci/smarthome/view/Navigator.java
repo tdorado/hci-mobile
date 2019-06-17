@@ -9,6 +9,7 @@ import com.itba.hci.smarthome.view.activity.AcActivity;
 import com.itba.hci.smarthome.view.activity.AlarmActivity;
 import com.itba.hci.smarthome.view.activity.BlindsActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
+import com.itba.hci.smarthome.view.activity.DoorActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
 import com.itba.hci.smarthome.view.activity.NewDeviceActivity;
 import com.itba.hci.smarthome.view.activity.OvenActivity;
@@ -18,6 +19,7 @@ import com.itba.hci.smarthome.view.fragment.AcFragment;
 import com.itba.hci.smarthome.view.fragment.AlarmFragment;
 import com.itba.hci.smarthome.view.fragment.BlindsFragment;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
+import com.itba.hci.smarthome.view.fragment.DoorFragment;
 import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.NewDeviceFragment;
 import com.itba.hci.smarthome.view.fragment.OvenFragment;
@@ -103,6 +105,12 @@ public class Navigator {
         devicesFragment.startActivity(intent);
     }
 
+    public void showDoorActivity(DevicesFragment devicesFragment, String idItemClicked) {
+        Intent intent = new Intent(devicesFragment.getContext(), DoorActivity.class);
+        intent.putExtra("deviceId", idItemClicked);
+        devicesFragment.startActivity(intent);
+    }
+
     /**
      * Fragments
      * <p>
@@ -140,6 +148,10 @@ public class Navigator {
 
     public void showAlarmFragment(AlarmActivity alarmActivity, String deviceId) {
         openFragment(alarmActivity, AlarmFragment.newInstance(deviceId), alarmActivity.getString(R.string.alarm_status), false);
+    }
+
+    public void showDoorFragment(DoorActivity doorActivity, String deviceId) {
+        openFragment(doorActivity, DoorFragment.newInstance(deviceId), doorActivity.getString(R.string.door_status), false);
     }
 
     private Fragment openFragment(SmartHomeActivity from, Fragment fragment, String name, boolean addToBackStack) {
