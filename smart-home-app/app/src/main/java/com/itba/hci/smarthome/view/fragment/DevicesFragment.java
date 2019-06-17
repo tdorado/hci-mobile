@@ -12,7 +12,7 @@ import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.model.entities.Device;
 import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
-import com.itba.hci.smarthome.util.DevicesAdapter;
+import com.itba.hci.smarthome.view.util.DevicesAdapter;
 import com.itba.hci.smarthome.view.Navigator;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
 

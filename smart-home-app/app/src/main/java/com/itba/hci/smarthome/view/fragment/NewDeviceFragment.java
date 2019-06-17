@@ -8,12 +8,11 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.itba.hci.smarthome.R;
-import com.itba.hci.smarthome.model.entities.DeviceTypes;
 import com.itba.hci.smarthome.model.request.DeviceRequest;
-import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.NewDeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
 import com.itba.hci.smarthome.view.Navigator;
+import com.itba.hci.smarthome.view.util.CommonUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,7 +64,7 @@ public class NewDeviceFragment extends SmartHomeFragment{
             showToastError(getResources().getString(R.string.name_for_device));
         }
         else {
-            DeviceRequest deviceRequest = new DeviceRequest(DeviceTypes.getDeviceTypes().get(typesSpinner.getSelectedItemPosition()), newDeviceName, "{}");
+            DeviceRequest deviceRequest = new DeviceRequest(CommonUtils.getDeviceTypes().get(typesSpinner.getSelectedItemPosition()), newDeviceName, "{}");
             newDeviceViewModel.createDevice(deviceRequest).observe(this, new Observer<Boolean>() {
                 @Override
                 public void onChanged(@Nullable Boolean result) {

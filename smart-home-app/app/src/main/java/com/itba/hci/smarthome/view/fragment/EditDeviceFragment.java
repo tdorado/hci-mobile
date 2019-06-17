@@ -6,14 +6,11 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.model.entities.Device;
-import com.itba.hci.smarthome.model.entities.DeviceTypes;
 import com.itba.hci.smarthome.model.request.DeviceRequest;
 import com.itba.hci.smarthome.model.viewModel.EditDeviceViewModel;
-import com.itba.hci.smarthome.model.viewModel.NewDeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
 import com.itba.hci.smarthome.view.Navigator;
 

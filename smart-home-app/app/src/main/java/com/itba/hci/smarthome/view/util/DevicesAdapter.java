@@ -1,4 +1,4 @@
-package com.itba.hci.smarthome.util;
+package com.itba.hci.smarthome.view.util;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.model.entities.Device;
-import com.itba.hci.smarthome.model.entities.DeviceTypes;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
 
 import java.util.List;
@@ -121,7 +120,7 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
 
         @OnClick(R.id.content_device)
         public void onDeviceClick() {
-            clickListener.onClick(DeviceTypes.getItemForDeviceType(device), device.getId());
+            clickListener.onClick(CommonUtils.getItemForDeviceType(device), device.getId());
         }
 
         public ViewHolder(@NonNull View itemView, ClickListener clickListener) {

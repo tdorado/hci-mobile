@@ -1,4 +1,4 @@
-package com.itba.hci.smarthome.util.notification;
+package com.itba.hci.smarthome.view.util.notification;
 /*
  * Copyright 2017 The Android Open Source Project
  *
@@ -25,10 +25,7 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.graphics.Color;
 
-import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
-
-import java.util.Random;
 
 /** Helper class to manage notification channels, and create notifications. */
 public class NotificationHelper extends ContextWrapper {

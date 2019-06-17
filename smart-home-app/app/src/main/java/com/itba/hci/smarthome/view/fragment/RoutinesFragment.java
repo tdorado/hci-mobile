@@ -12,7 +12,7 @@ import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.model.entities.Routine;
 import com.itba.hci.smarthome.model.viewModel.RoutinesViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
-import com.itba.hci.smarthome.util.RoutinesAdapter;
+import com.itba.hci.smarthome.view.util.RoutinesAdapter;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
 
 import java.util.ArrayList;

@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
-import com.itba.hci.smarthome.util.notification.NotificationHelper;
+import com.itba.hci.smarthome.view.util.notification.NotificationHelper;
 import com.itba.hci.smarthome.view.Navigator;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
