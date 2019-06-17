@@ -3,6 +3,8 @@ package com.itba.hci.smarthome.dagger.modules;
 import com.itba.hci.smarthome.view.fragment.AcFragment;
 import com.itba.hci.smarthome.view.fragment.AlarmFragment;
 import com.itba.hci.smarthome.view.fragment.BlindsFragment;
+import com.itba.hci.smarthome.view.fragment.DeleteDeviceFragment;
+import com.itba.hci.smarthome.view.fragment.DeleteRoutineFragment;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 import com.itba.hci.smarthome.view.fragment.DoorFragment;
 import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
@@ -53,4 +55,10 @@ public abstract class FragmentModule {
 
     @ContributesAndroidInjector
     abstract LampFragment contributeLampFragment();
+
+    @ContributesAndroidInjector
+    abstract DeleteDeviceFragment contributeDeleteDeviceFragment();
+
+    @ContributesAndroidInjector
+    abstract DeleteRoutineFragment contributeDeleteRoutineFragment();
 }

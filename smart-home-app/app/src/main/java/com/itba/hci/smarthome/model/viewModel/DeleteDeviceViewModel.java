@@ -4,15 +4,10 @@ import android.arch.lifecycle.LiveData;
 
 import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
 import com.itba.hci.smarthome.db.DeviceRepository;
-import com.itba.hci.smarthome.db.LampActionsRepository;
-import com.itba.hci.smarthome.model.entities.Device;
-import com.itba.hci.smarthome.model.entities.LampState;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
-public class DeviceViewModel extends SmartHomeViewModel {
+public class DeleteDeviceViewModel extends SmartHomeViewModel{
     @Inject
     DeviceRepository deviceRepository;
 
@@ -21,7 +16,8 @@ public class DeviceViewModel extends SmartHomeViewModel {
         component.inject(this);
     }
 
-    public LiveData<List<Device>> getAllDevices(){
-        return deviceRepository.getAllDevices();
+    public LiveData<Boolean> deleteDevice(String deviceId){
+        return deviceRepository.deleteDevice(deviceId);
     }
+
 }

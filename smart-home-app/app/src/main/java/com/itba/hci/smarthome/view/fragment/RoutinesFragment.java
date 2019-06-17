@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,6 +13,7 @@ import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.model.entities.Routine;
 import com.itba.hci.smarthome.model.viewModel.RoutinesViewModel;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
+import com.itba.hci.smarthome.view.Navigator;
 import com.itba.hci.smarthome.view.util.RoutinesAdapter;
 import com.itba.hci.smarthome.view.fragmentView.ClickListener;
 
@@ -19,9 +21,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 
 public class RoutinesFragment extends SmartHomeFragment implements ClickListener {
+
+    @Inject
+    Navigator navigator;
 
     RoutinesAdapter routinesAdapter = new RoutinesAdapter(this);
 
@@ -43,7 +50,12 @@ public class RoutinesFragment extends SmartHomeFragment implements ClickListener
     }
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        routines.setLayoutManager(new LinearLayoutManager(getContext()));
+        if(isTablet()){
+            routines.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        }
+        else {
+            routines.setLayoutManager(new LinearLayoutManager(getContext()));
+        }
         routines.setAdapter(routinesAdapter);
     }
 
@@ -67,24 +79,29 @@ public class RoutinesFragment extends SmartHomeFragment implements ClickListener
 
     @Override
     public void onClick(int item, String idItemClicked) {
-        routinesViewModel.executeRoutine(idItemClicked).observe(this, new Observer<List<Boolean>>() {
-            @Override
-            public void onChanged(@Nullable List<Boolean> booleans) {
-                if(booleans != null) {
-                    int i = 0;
-                    for (Boolean b : booleans) {
-                        if (b) {
-                            i++;
+        if(item == 0){
+            routinesViewModel.executeRoutine(idItemClicked).observe(this, new Observer<List<Boolean>>() {
+                @Override
+                public void onChanged(@Nullable List<Boolean> booleans) {
+                    if(booleans != null) {
+                        int i = 0;
+                        for (Boolean b : booleans) {
+                            if (b) {
+                                i++;
+                            }
                         }
+                        if (i ==0)
+                            showToastError(getResources().getString(R.string.actions_cant_execute));
+                        else if (i == 1)
+                            showToastError(i + " " + getResources().getString(R.string.one_action_executed));
+                        else
+                            showToastError(i + " " + getResources().getString(R.string.actions_executed));
                     }
-                    if (i ==0)
-                        showToastError(getResources().getString(R.string.actions_cant_execute));
-                    else if (i == 1)
-                        showToastError(i + " " + getResources().getString(R.string.one_action_executed));
-                    else
-                        showToastError(i + " " + getResources().getString(R.string.actions_executed));
                 }
-            }
-        });
+            });
+        }
+        else{
+            navigator.showDeleteRoutineActivity(this, idItemClicked);
+        }
     }
 }

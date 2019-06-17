@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.core.SmartHomeApplication;
 import com.itba.hci.smarthome.dagger.components.SmartHomeComponents;
 import com.itba.hci.smarthome.model.viewModel.SmartHomeViewModel;
@@ -24,11 +25,17 @@ public abstract class SmartHomeFragment extends Fragment implements View {
 
     @Inject
     SmartHomeApplication smartHomeApplication;
+    private boolean isTablet;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initializeViewModels(getViewModels());
+        isTablet = getResources().getBoolean(R.bool.is_tablet);
+    }
+
+    public boolean isTablet(){
+        return isTablet;
     }
 
     @Override

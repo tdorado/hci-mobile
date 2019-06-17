@@ -8,6 +8,8 @@ import com.itba.hci.smarthome.R;
 import com.itba.hci.smarthome.view.activity.AcActivity;
 import com.itba.hci.smarthome.view.activity.AlarmActivity;
 import com.itba.hci.smarthome.view.activity.BlindsActivity;
+import com.itba.hci.smarthome.view.activity.DeleteDeviceActivity;
+import com.itba.hci.smarthome.view.activity.DeleteRoutineActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.DoorActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
@@ -19,6 +21,8 @@ import com.itba.hci.smarthome.view.activity.SmartHomeActivity;
 import com.itba.hci.smarthome.view.fragment.AcFragment;
 import com.itba.hci.smarthome.view.fragment.AlarmFragment;
 import com.itba.hci.smarthome.view.fragment.BlindsFragment;
+import com.itba.hci.smarthome.view.fragment.DeleteDeviceFragment;
+import com.itba.hci.smarthome.view.fragment.DeleteRoutineFragment;
 import com.itba.hci.smarthome.view.fragment.DevicesFragment;
 import com.itba.hci.smarthome.view.fragment.DoorFragment;
 import com.itba.hci.smarthome.view.fragment.EditDeviceFragment;
@@ -119,6 +123,18 @@ public class Navigator {
         devicesFragment.startActivity(intent);
     }
 
+    public void showDeleteRoutineActivity(RoutinesFragment routinesFragment, String idItemClicked) {
+        Intent intent = new Intent(routinesFragment.getContext(), DeleteRoutineActivity.class);
+        intent.putExtra("routineId", idItemClicked);
+        routinesFragment.startActivity(intent);
+    }
+
+    public void showDeleteDeviceActivity(DevicesFragment devicesFragment, String idItemClicked) {
+        Intent intent = new Intent(devicesFragment.getContext(), DeleteDeviceActivity.class);
+        intent.putExtra("deviceId", idItemClicked);
+        devicesFragment.startActivity(intent);
+    }
+
     /**
      * Fragments
      * <p>
@@ -166,6 +182,14 @@ public class Navigator {
         openFragment(lampActivity, LampFragment.newInstance(deviceId), lampActivity.getString(R.string.lamp_status), false);
     }
 
+    public void showDeleteDeviceFragment(DeleteDeviceActivity deleteDeviceActivity, String deviceId) {
+        openFragment(deleteDeviceActivity, DeleteDeviceFragment.newInstance(deviceId), deleteDeviceActivity.getString(R.string.delete_device), false);
+    }
+
+    public void showDeleteRoutineFragment(DeleteRoutineActivity deleteRoutineActivity, String routineId) {
+        openFragment(deleteRoutineActivity, DeleteRoutineFragment.newInstance(routineId), deleteRoutineActivity.getString(R.string.delete_routine), false);
+    }
+
     private Fragment openFragment(SmartHomeActivity from, Fragment fragment, String name, boolean addToBackStack) {
         FragmentTransaction transaction = from.getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.content_frame, fragment, name);
@@ -176,5 +200,7 @@ public class Navigator {
         from.invalidateOptionsMenu();
         return fragment;
     }
+
+
 }
 

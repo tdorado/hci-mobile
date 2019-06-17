@@ -5,45 +5,65 @@
     android:layout_marginStart="10dp"
     android:layout_marginEnd="10dp"
     android:layout_marginTop="10dp"
-    android:id="@+id/content_routine"
+    android:id="@+id/content_device"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
     android:background="@drawable/main_button">
 
+    <ImageView
+        android:id="@+id/device_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/ic_default" />
+
     <TextView
-        android:id="@+id/routine_name"
+        android:id="@+id/device_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/device_icon"
         android:fontFamily="@font/roboto_bold"
         android:textColor="@color/black"
         android:textSize="17sp"
-        android:text="@string/routine"/>
+        android:text="@string/device"/>
 
     <ImageButton
-        android:id="@+id/routine_delete_button"
-        android:visibility="gone"
+        android:id="@+id/device_delete_button"
+        android:visibility="visible"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="90dp"
+        android:layout_marginEnd="127dp"
         android:src="@drawable/ic_delete_device"
         android:contentDescription="@string/delete_device" />
 
     <ImageButton
-        android:id="@+id/routine_button"
+        android:id="@+id/device_edit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="65dp"
+        android:src="@drawable/ic_edit_device"
+        android:contentDescription="@string/edit_device" />
+
+    <Switch
+        android:id="@+id/device_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="15dp"
-        android:src="@drawable/ic_run_routine"
-        android:contentDescription="@string/execute_routine" />
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp" />
 
 </RelativeLayout>

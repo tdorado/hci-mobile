@@ -15,6 +15,8 @@ import com.itba.hci.smarthome.db.OvenActionsRepository;
 import com.itba.hci.smarthome.model.viewModel.AcViewModel;
 import com.itba.hci.smarthome.model.viewModel.AlarmViewModel;
 import com.itba.hci.smarthome.model.viewModel.BlindsViewModel;
+import com.itba.hci.smarthome.model.viewModel.DeleteDeviceViewModel;
+import com.itba.hci.smarthome.model.viewModel.DeleteRoutineViewModel;
 import com.itba.hci.smarthome.model.viewModel.DeviceViewModel;
 import com.itba.hci.smarthome.model.viewModel.DoorViewModel;
 import com.itba.hci.smarthome.model.viewModel.EditDeviceViewModel;
@@ -25,6 +27,8 @@ import com.itba.hci.smarthome.model.viewModel.RoutinesViewModel;
 import com.itba.hci.smarthome.view.activity.AcActivity;
 import com.itba.hci.smarthome.view.activity.AlarmActivity;
 import com.itba.hci.smarthome.view.activity.BlindsActivity;
+import com.itba.hci.smarthome.view.activity.DeleteDeviceActivity;
+import com.itba.hci.smarthome.view.activity.DeleteRoutineActivity;
 import com.itba.hci.smarthome.view.activity.DevicesActivity;
 import com.itba.hci.smarthome.view.activity.DoorActivity;
 import com.itba.hci.smarthome.view.activity.EditDeviceActivity;
@@ -97,6 +101,14 @@ public interface SmartHomeComponents {
     void inject(DoorActivity doorActivity);
 
     void inject(LampActivity lampActivity);
+
+    void inject(DeleteDeviceViewModel deleteDeviceViewModel);
+
+    void inject(DeleteRoutineViewModel deleteRoutineViewModel);
+
+    void inject(DeleteDeviceActivity deleteDeviceActivity);
+
+    void inject(DeleteRoutineActivity deleteRoutineActivity);
 
 
     final class Initializer {

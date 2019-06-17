@@ -42,7 +42,6 @@ public class RoutinesAdapter extends RecyclerView.Adapter<RoutinesAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull RoutinesAdapter.ViewHolder viewHolder, int i) {
-        //aca se bindea toda la data piola vago, el i es la position dentro de la lista de productos
         Routine routine = routines.get(i);
 
         viewHolder.routine = routine;
@@ -69,6 +68,11 @@ public class RoutinesAdapter extends RecyclerView.Adapter<RoutinesAdapter.ViewHo
         @OnClick(R.id.routine_button)
         public void onRoutineClick() {
             clickListener.onClick(0, routine.getId());
+        }
+
+        @OnClick(R.id.routine_delete_button)
+        public void OnDeleteRoutineClick(){
+            clickListener.onClick(1, routine.getId());
         }
 
         public ViewHolder(@NonNull View itemView, ClickListener clickListener) {

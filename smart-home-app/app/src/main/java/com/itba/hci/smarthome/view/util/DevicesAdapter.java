@@ -45,7 +45,6 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull DevicesAdapter.ViewHolder viewHolder, int i) {
-        //aca se bindea toda la data piola vago, el i es la position dentro de la lista de productos
         Device device = devices.get(i);
 
         viewHolder.device = device;
@@ -106,8 +105,10 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
         @BindView(R.id.device_edit_button)
         ImageButton editButton;
 
-        private ClickListener clickListener;
+        @BindView(R.id.device_delete_button)
+        ImageButton deleteButton;
 
+        private ClickListener clickListener;
 
         public ViewHolder(View v) {
             super(v);
@@ -116,6 +117,11 @@ public class DevicesAdapter extends RecyclerView.Adapter<DevicesAdapter.ViewHold
         @OnClick(R.id.device_edit_button)
         public void onEditDeviceClick(){
             clickListener.onClick(0, device.getId());
+        }
+
+        @OnClick(R.id.device_delete_button)
+        public void onDeleteDeviceClick(){
+            clickListener.onClick(10, device.getId());
         }
 
         @OnClick(R.id.content_device)

@@ -43,6 +43,8 @@
         <activity android:name=".view.activity.AlarmActivity" />
         <activity android:name=".view.activity.DoorActivity" />
         <activity android:name=".view.activity.LampActivity" />
+        <activity android:name=".view.activity.DeleteDeviceActivity" />
+        <activity android:name=".view.activity.DeleteRoutineActivity" />
 
     </application>
 
