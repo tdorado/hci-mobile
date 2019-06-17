@@ -1,251 +1,251 @@
 <resources>
-    <string name="welcome">Bienvenido a su casa inteligente</string>
-    <string name="loaded">Sus dispositivos estan cargados</string>
-    <string name="error_update_device">Algo ha salido mal al intentar modificar el dispositivo</string>
-    <string name="error_create_device">Algo ha salido mal al intentar crear el dispositivo</string>
-    <string name="double_press">Presione nuevamente para salir de la aplicación</string>
-    <string name="name_for_device">Ingrese un nombre para el dispositivo</string>
-    <string name="device_update_ok">Dispositivo modificado correctamente</string>
-    <string name="device_delete_ok">Dispositivo eliminado correctamente</string>
-    <string name="routine_delete_ok">Rutina eliminada correctamente</string>
-    <string name="delete_device_ask">¿Está seguro que desea eliminar el dispositivo?</string>
-    <string name="delete_routine_ask">¿Está seguro que desea eliminar la rutina?</string>
-    <string name="delete_routine">Eliminar Rutina</string>
-    <string name="one_action_executed"> acción de rutina ejecutadas correctamente</string>
-    <string name="actions_executed"> acciones de rutina ejecutadas correctamente</string>
-    <string name="actions_cant_execute">No se puede ejecutar la acción en ese estado</string>
-    <string name="yes">Si</string>
+    <string name="welcome">Welcome to your Smart Home</string>
+    <string name="loaded">Your devices are loaded</string>
+    <string name="error_update_device">Something went wrong while updating the device</string>
+    <string name="error_create_device">Something went wrong while creating the device</string>
+    <string name="double_press">Press back again to exit</string>
+    <string name="name_for_device">Enter name for device</string>
+    <string name="device_update_ok">Device updated correctly</string>
+    <string name="device_delete_ok">Device deleted correctly</string>
+    <string name="routine_delete_ok">Routine deleted correctly</string>
+    <string name="delete_device_ask">Are you sure you want to delete the device?</string>
+    <string name="delete_routine_ask">Are you sure you want to delete the routine?</string>
+    <string name="delete_routine">Delete Routine</string>
+    <string name="one_action_executed"> routine action executed correctly</string>
+    <string name="actions_executed"> routine actions executed correctly</string>
+    <string name="actions_cant_execute">It is not possible to execute routine on that status</string>
+    <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="app_name">Smart Home</string>
-    <string name="add_device">Agregar Dispositivo</string>
-    <string name="edit_device">Editar Dispositivo</string>
-    <string name="delete_device">Eliminar Dispositivo</string>
-    <string name="devices">Dispositivos</string>
-    <string name="routines">Rutinas</string>
-    <string name="level">Nivel:</string>
-    <string name="error">Algo ha salido mal</string>
-    <string name="error_message">Algo ha salido mal en:</string>
-    <string name="device_name">Nombre del Dispositivo:</string>
-    <string name="name_hint">(Nombre)</string>
-    <string name="device_type">Tipo de Dispositivo:</string>
-    <string name="choose_device_type">Elija el Dispositivo</string>
-    <string name="execute_routine">Ejecutar Rutina</string>
-    <string name="door_status">Estado Puerta</string>
-    <string name="lamp_status">Estado Lámpara</string>
-    <string name="alarm_status">Estado Alarma</string>
-    <string name="blinds_status">Estado Cortinas</string>
-    <string name="oven_status">Estado Horno</string>
-    <string name="ac_status">Estado Aire Acondicionado</string>
-    <string name="opened">Abierto</string>
-    <string name="closed">Cerrado</string>
-    <string name="closing">Cerrando</string>
-    <string name="opening">Abriendo</string>
-    <string name="on">Encendido</string>
-    <string name="off">Apagado</string>
-    <string name="cool">Frío</string>
-    <string name="heat">Calor</string>
-    <string name="fan">Ventilador</string>
-    <string name="auto">Automático</string>
+    <string name="add_device">Add Device</string>
+    <string name="edit_device">Update Device</string>
+    <string name="delete_device">Delete Device</string>
+    <string name="devices">Devices</string>
+    <string name="routines">Routines</string>
+    <string name="level">Level:</string>
+    <string name="error">Something went wrong</string>
+    <string name="error_message">Something went wrong:</string>
+    <string name="device_name">Device Name:</string>
+    <string name="name_hint">(Name)</string>
+    <string name="device_type">Device Type:</string>
+    <string name="choose_device_type">Choose a Device</string>
+    <string name="execute_routine">Execute Routine</string>
+    <string name="door_status">Door State</string>
+    <string name="lamp_status">Lamp State</string>
+    <string name="alarm_status">Alarm State</string>
+    <string name="blinds_status">Blinds State</string>
+    <string name="oven_status">Oven State</string>
+    <string name="ac_status">AC State</string>
+    <string name="opened">Opened</string>
+    <string name="closed">Closed</string>
+    <string name="closing">Closing</string>
+    <string name="opening">Opening</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="cool">Cool</string>
+    <string name="heat">Heat</string>
+    <string name="fan">Fan</string>
+    <string name="auto">Automatic</string>
     <string name="normal">Normal</string>
-    <string name="eco">Económico</string>
-    <string name="conventional">Convencional</string>
-    <string name="top">Arriba</string>
-    <string name="bottom">Abajo</string>
-    <string name="large">Grande</string>
-    <string name="armedStay">Activada Adentro</string>
-    <string name="armedAway">Activada Afuera</string>
-    <string name="disarmed">Desactivada</string>
-    <string name="locked">Trabado</string>
-    <string name="unlocked">Destrabado</string>
-    <string name="turn_on">Dispositivo encendido</string>
-    <string name="turn_off">Dispositivo apagado</string>
-    <string name="cant_turn_on">El dispositivo ya está encendido</string>
-    <string name="cant_turn_off">El dispositivo ya está apagado</string>
-    <string name="device_not_implemented">Dispositivo no implementado</string>
-    <string name="action_done">Acción realizada correctamente</string>
-    <string name="current_option">El dispositivo ya está con esa configuración</string>
-    <string name="configuration_changed">Configuración cambiada correctamente</string>
-    <string name="invalid_params">Parámetros inválidos de acción</string>
-    <string name="alarm_invalid_code">Código ingresado en formato incorrecto(cuatro dígitos)</string>
-    <string name="alarm_invalid_current_code">Código actual ingresado en formato incorrecto(cuatro dígitos)</string>
-    <string name="alarm_invalid_new_code">Código nuevo ingresado en formato incorrecto(cuatro dígitos)</string>
-    <string name="alarm_code_changed">Código cambiado correctamente</string>
-    <string name="alarm_wrong_code">Código actual ingresado incorrecto</string>
-    <string name="alarm_activated">Alarma activada</string>
-    <string name="alarm_already_armed">Alarma ya activada</string>
-    <string name="alarm_already_disarmed">Alarma ya desactivada</string>
-    <string name="alarm_disarmed">Alarma desactivada</string>
-    <string name="device">Dispositivo</string>
-    <string name="routine">Rutina</string>
-    <string name="status_caps">ESTADO</string>
+    <string name="eco">Economic</string>
+    <string name="conventional">Conventional</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="large">Large</string>
+    <string name="armedStay">Armed Stay</string>
+    <string name="armedAway">Armed Away</string>
+    <string name="disarmed">Disarmed</string>
+    <string name="locked">Locked</string>
+    <string name="unlocked">Unlocked</string>
+    <string name="turn_on">Device on</string>
+    <string name="turn_off">Device off</string>
+    <string name="cant_turn_on">Device already on</string>
+    <string name="cant_turn_off">Device already off</string>
+    <string name="device_not_implemented">Device not implemented yet</string>
+    <string name="action_done">Action done correctly</string>
+    <string name="current_option">Device already with that configuration</string>
+    <string name="configuration_changed">Configuration changed correctly</string>
+    <string name="invalid_params">Invalid action parameters</string>
+    <string name="alarm_invalid_code">Invalid format of code entered(four digits)</string>
+    <string name="alarm_invalid_current_code">Invalid format of current code entered(four digits)</string>
+    <string name="alarm_invalid_new_code">Invalid format of new code entered(four digits)</string>
+    <string name="alarm_code_changed">Code changed correctly</string>
+    <string name="alarm_wrong_code">Incorrect current code entered</string>
+    <string name="alarm_activated">Alarm activated</string>
+    <string name="alarm_already_armed">Alarm already activated</string>
+    <string name="alarm_already_disarmed">Alarm already deactivated</string>
+    <string name="alarm_disarmed">Alarm deactivated</string>
+    <string name="device">Device</string>
+    <string name="routine">Routine</string>
+    <string name="status_caps">STATE</string>
 
     <string-array name="device_types_array">
-        <item>Lámpara</item>
-        <item>Aire Acondicionado</item>
-        <item>Persiana/Cortina</item>
-        <item>Alarma</item>
-        <item>Puerta</item>
-        <item>Horno</item>
+        <item>Lamp</item>
+        <item>AC</item>
+        <item>Blinds</item>
+        <item>Alarm</item>
+        <item>Door</item>
+        <item>Oven</item>
     </string-array>
 
 
 
-    <string name="door_lock">Traba:</string>
-    <string name="actions">Acciones:</string>
+    <string name="door_lock">Lock:</string>
+    <string name="actions">Actions:</string>
     <string-array name="door_actions_array">
-        <item>Ninguna</item>
-        <item>Abrir</item>
-        <item>Cerrar</item>
-        <item>Trabar</item>
-        <item>Destrabar</item>
+        <item>None</item>
+        <item>Open</item>
+        <item>Close</item>
+        <item>Lock</item>
+        <item>Unlock</item>
     </string-array>
-    <string name="door_already_opened">Puerta ya abierta</string>
-    <string name="door_already_closed">Puerta ya cerrada</string>
-    <string name="door_already_locked">Puerta ya trabada</string>
-    <string name="door_already_unlocked">Puerta ya destrabada</string>
-    <string name="door_opened">Puerta abierta</string>
-    <string name="door_closed">Puerta cerrada</string>
-    <string name="door_locked">Puerta trabada</string>
-    <string name="door_unlocked">Puerta destrabada</string>
-    <string name="cant_open_door">No se pudo abrir la puerta</string>
-    <string name="cant_close_door">No se pudo cerrar la puerta</string>
-    <string name="cant_lock_door">No se pudo trabar la puerta</string>
-    <string name="cant_unlock_door">No se pudo destrabar la puerta</string>
+    <string name="door_already_opened">Door already opened</string>
+    <string name="door_already_closed">Door already closed</string>
+    <string name="door_already_locked">Door already locked</string>
+    <string name="door_already_unlocked">Door already unlocked</string>
+    <string name="door_opened">Door opened</string>
+    <string name="door_closed">Door closed</string>
+    <string name="door_locked">Door locked</string>
+    <string name="door_unlocked">Door unlocked</string>
+    <string name="cant_open_door">It was not possible to open door</string>
+    <string name="cant_close_door">It was not possible to close door</string>
+    <string name="cant_lock_door">It was not possible to lock door</string>
+    <string name="cant_unlock_door">It was not possible to unlock door</string>
 
 
     <string name="lamp_color">Color:</string>
-    <string name="lamp_brightness">Brillo:</string>
-    <string name="lamp_brightness_hint">(Valor de 0 a 100)</string>
-    <string name="set_brightness">Ingrese Brillo:</string>
-    <string name="set_color">Seleccione Color:</string>
+    <string name="lamp_brightness">Brightness:</string>
+    <string name="lamp_brightness_hint">(0 to 100 Value)</string>
+    <string name="set_brightness">Enter Brightness:</string>
+    <string name="set_color">Select Color:</string>
     <string-array name="lamp_actions_array">
-        <item>Ninguna</item>
-        <item>Encender</item>
-        <item>Apagar</item>
-        <item>Cambiar Color</item>
-        <item>Cambiar Brillo</item>
+        <item>None</item>
+        <item>Turn On</item>
+        <item>Turn Off</item>
+        <item>Change Color</item>
+        <item>Change Brightness</item>
     </string-array>
     <string-array name="lamp_color_array">
-        <item>Blanco</item>
-        <item>Rojo</item>
-        <item>Azul</item>
-        <item>Amarillo</item>
-        <item>Verde</item>
-        <item>Negro</item>
+        <item>White</item>
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>Black</item>
     </string-array>
-    <string name="white">Blanco</string>
-    <string name="red">Rojo</string>
-    <string name="blue">Azul</string>
-    <string name="yellow">Amarillo</string>
-    <string name="green">Verde</string>
-    <string name="black">Negro</string>
+    <string name="white">White</string>
+    <string name="red">Red</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="black">Black</string>
 
-    <string name="status">Estado:</string>
-    <string name="percentage">Porcentaje:</string>
+    <string name="status">Status:</string>
+    <string name="percentage">Percentage:</string>
     <string-array name="blinds_actions_array">
-        <item>Ninguna</item>
-        <item>Abrir</item>
-        <item>Cerrar</item>
+        <item>None</item>
+        <item>Open</item>
+        <item>Close</item>
     </string-array>
 
-    <string name="set_current_security_code">Ingrese el Código Actual:</string>
-    <string name="current_security_code_hint">(Cuatro Dígitos)</string>
-    <string name="set_new_security_code">Ingrese el Código Nuevo:</string>
-    <string name="new_security_code_hint">(Cuatro Dígitos)</string>
+    <string name="set_current_security_code">Enter Current Code:</string>
+    <string name="current_security_code_hint">(Four Digits)</string>
+    <string name="set_new_security_code">Enter New Code:</string>
+    <string name="new_security_code_hint">(Four Digits)</string>
 
-    <string name="ac_temperature">Temperatura:</string>
-    <string name="ac_mode">Modo:</string>
-    <string name="ac_vertical_swing">Swing Vertical:</string>
-    <string name="ac_horizontal_swing">Swing Horizontal:</string>
-    <string name="ac_fan_speed">Velocidad Ventilador:</string>
+    <string name="ac_temperature">Temperature:</string>
+    <string name="ac_mode">Mode:</string>
+    <string name="ac_vertical_swing">Vertical Swing:</string>
+    <string name="ac_horizontal_swing">Horizontal Swing:</string>
+    <string name="ac_fan_speed">Fan Speed:</string>
     <string-array name="ac_actions_array">
-        <item>Ninguna</item>
-        <item>Encender</item>
-        <item>Apagar</item>
-        <item>Cambiar Temperatura</item>
-        <item>Cambiar Modo</item>
-        <item>Cambiar Swing Vertical</item>
-        <item>Cambiar Swing Horizontal</item>
-        <item>Cambiar Velocidad Ventilador</item>
+        <item>None</item>
+        <item>Turn On</item>
+        <item>Turn Off</item>
+        <item>Change Temperature</item>
+        <item>Change Mode</item>
+        <item>Change Vertical Swing</item>
+        <item>Change Horizontal Swing</item>
+        <item>Change Fan Speed</item>
     </string-array>
-    <string name="set_temperature">Ingrese Temperatura:</string>
-    <string name="ac_temperature_hint">(Valor de 18 a 38)</string>
-    <string name="set_mode">Ingrese Modo:</string>
+    <string name="set_temperature">Enter Temperature:</string>
+    <string name="ac_temperature_hint">(18 to 38 Value)</string>
+    <string name="set_mode">Select Mode:</string>
     <string-array name="ac_mode_array">
-        <item>Frío</item>
-        <item>Calor</item>
-        <item>Viento</item>
+        <item>Cool</item>
+        <item>Heat</item>
+        <item>Fan</item>
     </string-array>
-    <string name="set_vertical_swing">Ingrese Swing Vertical:</string>
+    <string name="set_vertical_swing">Select Vertical Swing:</string>
     <string-array name="ac_vertical_swing_array">
-        <item>Automático</item>
+        <item>Automatic</item>
         <item>22</item>
         <item>45</item>
         <item>67</item>
         <item>90</item>
     </string-array>
-    <string name="set_horizontal_swing">Ingrese Swing Horizontal:</string>
+    <string name="set_horizontal_swing">Select Horizontal Swing:</string>
     <string-array name="ac_horizontal_swing_array">
-        <item>Automático</item>
+        <item>Automatic</item>
         <item>-90</item>
         <item>-45</item>
         <item>0</item>
         <item>45</item>
         <item>90</item>
     </string-array>
-    <string name="set_fan_speed">Ingrese Velocidad Ventilador:</string>
+    <string name="set_fan_speed">Select Fan Speed:</string>
     <string-array name="ac_fan_speed_array">
-        <item>Automático</item>
+        <item>Automatic</item>
         <item>25</item>
         <item>50</item>
         <item>75</item>
         <item>100</item>
     </string-array>
 
-    <string name="oven_heat">Calor:</string>
+    <string name="oven_heat">Heat:</string>
     <string name="oven_grill">Grill:</string>
-    <string name="oven_convection">Convección:</string>
+    <string name="oven_convection">Convection:</string>
     <string-array name="oven_actions_array">
-        <item>Ninguna</item>
-        <item>Encender</item>
-        <item>Apagar</item>
-        <item>Cambiar Temperatura</item>
-        <item>Cambiar Calor</item>
-        <item>Cambiar Grill</item>
-        <item>Cambiar Convección</item>
+        <item>None</item>
+        <item>Turn On</item>
+        <item>Turn Off</item>
+        <item>Change Temperature</item>
+        <item>Change Heat</item>
+        <item>Change Grill</item>
+        <item>Change Convection</item>
     </string-array>
-    <string name="oven_temperature_hint">(Valor de 90 a 230)</string>
-    <string name="set_heat">Ingrese Calor:</string>
+    <string name="oven_temperature_hint">(90 to 230 Value)</string>
+    <string name="set_heat">Select Heat:</string>
     <string-array name="oven_heat_array">
-        <item>Convencional</item>
-        <item>Abajo</item>
-        <item>Arriba</item>
+        <item>Conventional</item>
+        <item>Bottom</item>
+        <item>Top</item>
     </string-array>
-    <string name="set_grill">Ingrese Grill:</string>
+    <string name="set_grill">Select Grill:</string>
     <string-array name="oven_grill_array">
-        <item>Grande</item>
-        <item>Económico</item>
-        <item>Apagado</item>
+        <item>Large</item>
+        <item>Economic</item>
+        <item>Off</item>
     </string-array>
-    <string name="set_convection">Ingrese Convección:</string>
+    <string name="set_convection">Select Convection:</string>
     <string-array name="oven_convection_array">
         <item>Normal</item>
-        <item>Económico</item>
-        <item>Apagado</item>
+        <item>Economic</item>
+        <item>Off</item>
     </string-array>
 
     <string-array name="alarm_actions_array">
-        <item>Ninguna</item>
-        <item>Cambiar Código Actual</item>
-        <item>Activar Modo Adentro</item>
-        <item>Activar Modo Afuera</item>
-        <item>Desactivar</item>
+        <item>None</item>
+        <item>Change Current Code</item>
+        <item>Activate Stay Mode</item>
+        <item>Activate Away Mode</item>
+        <item>Deactivate</item>
     </string-array>
 
-    <string name="opening_blinds">Abriendo cortinas</string>
-    <string name="closing_blinds">Cerrando cortinas</string>
-    <string name="cant_open_blinds">Ya esta abierta o se está abriendo</string>
-    <string name="cant_close_blinds">Ya esta cerrada o se está cerrando</string>
+    <string name="opening_blinds">Opening blinds</string>
+    <string name="closing_blinds">Closing blinds</string>
+    <string name="cant_open_blinds">Blinds already opened or opening</string>
+    <string name="cant_close_blinds">Blinds already closed or closing</string>
 
 </resources>
 
