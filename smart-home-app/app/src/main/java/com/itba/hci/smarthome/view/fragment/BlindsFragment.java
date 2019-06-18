@@ -101,6 +101,7 @@ public class BlindsFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.blinds), getString(R.string.d_opened));
                             showToastError(getString(R.string.opening_blinds));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_open_blinds));
@@ -121,6 +122,7 @@ public class BlindsFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.blinds), getString(R.string.d_closed));
                             showToastError(getString(R.string.closing_blinds));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_close_blinds));

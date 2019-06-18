@@ -247,5 +247,21 @@
     <string name="cant_open_blinds">Ya esta abierta o se está abriendo</string>
     <string name="cant_close_blinds">Ya esta cerrada o se está cerrando</string>
 
+    <string name="d_turned_on">Se encendió</string>
+    <string name="d_turned_off">Se apagó</string>
+    <string name="d_opened">Se abrió</string>
+    <string name="d_closed">Se cerró</string>
+    <string name="d_changed_configuration">Cambió sus configuraciones</string>
+    <string name="routines_loaded_long">Todas las rutinas se cargaron correctamente</string>
+    <string name="devices_loaded_long">Todos los dispositivos se cargaron correctamente</string>
+    <string name="notifications">Notificaciones</string>
+    <string name="ac">Aire Acondicionado</string>
+    <string name="lamp">Lámpara</string>
+    <string name="oven">Horno</string>
+    <string name="door">Puerta</string>
+    <string name="alarm">Alarma</string>
+    <string name="blinds">Cortinas</string>
+
+
 </resources>
 

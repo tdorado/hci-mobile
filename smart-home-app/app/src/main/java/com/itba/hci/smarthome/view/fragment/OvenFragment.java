@@ -165,6 +165,7 @@ public class OvenFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.oven), getString(R.string.d_turned_on));
                             showToastError(getString(R.string.turn_on));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_turn_on));
@@ -185,6 +186,7 @@ public class OvenFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.oven), getString(R.string.d_turned_off));
                             showToastError(getString(R.string.turn_off));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_turn_off));
@@ -210,6 +212,7 @@ public class OvenFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Integer oldTemperatureValue) {
                         if(ovenState.getTemperature().equals(oldTemperatureValue)){
+                            sendNotification(getContext(), getString(R.string.oven), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -230,6 +233,7 @@ public class OvenFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         if(ovenState.getHeat().equals(s)){
+                            sendNotification(getContext(), getString(R.string.oven), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -250,6 +254,7 @@ public class OvenFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         if(ovenState.getGrill().equals(s)){
+                            sendNotification(getContext(), getString(R.string.oven), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -270,6 +275,7 @@ public class OvenFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         if(ovenState.getConvection().equals(s)){
+                            sendNotification(getContext(), getString(R.string.oven), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{

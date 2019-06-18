@@ -138,6 +138,7 @@ public class LampFragment extends SmartHomeFragment{
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.lamp), getString(R.string.d_turned_on));
                             showToastError(getString(R.string.turn_on));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_turn_on));
@@ -158,6 +159,7 @@ public class LampFragment extends SmartHomeFragment{
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.lamp), getString(R.string.d_turned_off));
                             showToastError(getString(R.string.turn_off));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_turn_off));
@@ -179,6 +181,7 @@ public class LampFragment extends SmartHomeFragment{
                     @Override
                     public void onChanged(@Nullable String oldColorValue) {
                         if(lampState.getColor().equals(oldColorValue)){
+                            sendNotification(getContext(), getString(R.string.lamp), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -203,6 +206,7 @@ public class LampFragment extends SmartHomeFragment{
                     @Override
                     public void onChanged(@Nullable Integer oldBrightnessValue) {
                         if(lampState.getBrightness().equals(oldBrightnessValue)){
+                            sendNotification(getContext(), getString(R.string.lamp), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{

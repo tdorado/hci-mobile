@@ -137,6 +137,7 @@ public class AlarmFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.alarm), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.alarm_code_changed));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.alarm_wrong_code));
@@ -162,6 +163,7 @@ public class AlarmFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.alarm), getString(R.string.d_turned_on));
                             showToastError(getString(R.string.alarm_activated));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.alarm_wrong_code));
@@ -187,6 +189,7 @@ public class AlarmFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.alarm), getString(R.string.d_turned_on));
                             showToastError(getString(R.string.alarm_activated));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.alarm_wrong_code));
@@ -212,6 +215,7 @@ public class AlarmFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.alarm), getString(R.string.d_turned_off));
                             showToastError(getString(R.string.alarm_disarmed));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.alarm_wrong_code));

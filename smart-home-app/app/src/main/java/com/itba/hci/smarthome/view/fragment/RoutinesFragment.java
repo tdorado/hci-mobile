@@ -42,6 +42,7 @@ public class RoutinesFragment extends SmartHomeFragment implements ClickListener
     public void onCreate(@Nullable Bundle savedInstanceState) {
         routinesViewModel = ViewModelProviders.of(this).get(RoutinesViewModel.class);
         super.onCreate(savedInstanceState);
+        sendNotification(getContext(), getString(R.string.welcome), getString(R.string.routines_loaded_long));
     }
 
     @Override

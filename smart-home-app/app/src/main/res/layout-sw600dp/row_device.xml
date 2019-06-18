@@ -27,11 +27,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="26dp"
         android:layout_toEndOf="@+id/device_icon"
         android:fontFamily="@font/roboto_bold"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:text="@string/device"/>
 
     <ImageButton

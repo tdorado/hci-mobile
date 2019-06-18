@@ -104,6 +104,7 @@ public class DoorFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.door), getString(R.string.d_opened));
                             showToastError(getString(R.string.door_opened));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_open_door));
@@ -124,6 +125,7 @@ public class DoorFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.door), getString(R.string.d_closed));
                             showToastError(getString(R.string.door_closed));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_close_door));
@@ -148,6 +150,7 @@ public class DoorFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.door), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.door_locked));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_lock_door));
@@ -172,6 +175,7 @@ public class DoorFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.door), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.door_unlocked));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_unlock_door));

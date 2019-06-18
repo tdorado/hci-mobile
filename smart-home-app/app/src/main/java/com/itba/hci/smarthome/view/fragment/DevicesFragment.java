@@ -50,6 +50,7 @@ public class DevicesFragment extends SmartHomeFragment implements ClickListener 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         deviceViewModel = ViewModelProviders.of(this).get(DeviceViewModel.class);
         super.onCreate(savedInstanceState);
+        sendNotification(getContext(), getString(R.string.welcome), getString(R.string.devices_loaded_long));
     }
 
     @Override

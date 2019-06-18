@@ -13,6 +13,7 @@ import java.util.List;
 public class CommonUtils {
 
     private static List<String> deviceTypes = new ArrayList<>();
+    private static boolean getNotifications = true;
 
     public static List<String> getDeviceTypes(){
         if(deviceTypes.isEmpty()){
@@ -193,5 +194,13 @@ public class CommonUtils {
     }
 
     public static void verifyAndAskPermissions(SmartHomeActivity smartHomeActivity) {
+    }
+
+    public static boolean isGetNotifications(){
+        return getNotifications;
+    }
+
+    public static void setGetNotifications(boolean state){
+        getNotifications = state;
     }
 }

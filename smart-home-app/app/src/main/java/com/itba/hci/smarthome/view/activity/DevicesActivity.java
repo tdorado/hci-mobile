@@ -39,7 +39,6 @@ public class DevicesActivity extends SmartHomeActivity {
 
         mNotificationHelper = new NotificationHelper(this);
         mUIModel = new MainUi(findViewById(R.id.content_frame));
-        this.sendNotification(12);
 
         getMenuDrawer().setOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
             @Override
@@ -105,7 +104,7 @@ public class DevicesActivity extends SmartHomeActivity {
 
         @Override
         public void onClick(View view) {
-            Log.d("Llego la notificacion","Llegó vieja");
+            Log.d("Llego la notificacion","Llegó notificacion");
         }
     }
 }

@@ -180,6 +180,7 @@ public class AcFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.ac), getString(R.string.d_turned_on));
                             showToastError(getString(R.string.turn_on));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_turn_on));
@@ -200,6 +201,7 @@ public class AcFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Boolean aBoolean) {
                         if (aBoolean != null && aBoolean) {
+                            sendNotification(getContext(), getString(R.string.ac), getString(R.string.d_turned_off));
                             showToastError(getString(R.string.turn_off));
                         } else if (aBoolean != null) {
                             showToastError(getString(R.string.cant_turn_off));
@@ -225,6 +227,7 @@ public class AcFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable Integer oldTemperatureValue) {
                         if(acState.getTemperature().equals(oldTemperatureValue)){
+                            sendNotification(getContext(), getString(R.string.ac), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -245,6 +248,7 @@ public class AcFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         if(acState.getMode().equals(s)){
+                            sendNotification(getContext(), getString(R.string.ac), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -265,6 +269,7 @@ public class AcFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         if(acState.getVerticalSwing().equals(s)){
+                            sendNotification(getContext(), getString(R.string.ac), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -285,6 +290,7 @@ public class AcFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         if(acState.getHorizontalSwing().equals(s)){
+                            sendNotification(getContext(), getString(R.string.ac), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
@@ -305,6 +311,7 @@ public class AcFragment extends SmartHomeFragment {
                     @Override
                     public void onChanged(@Nullable String s) {
                         if(acState.getFanSpeed().equals(s)){
+                            sendNotification(getContext(), getString(R.string.ac), getString(R.string.d_changed_configuration));
                             showToastError(getString(R.string.configuration_changed));
                         }
                         else{
